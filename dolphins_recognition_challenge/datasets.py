@@ -36,14 +36,19 @@ if not Path("vision").exists():
     git.Git(".").clone("https://github.com/pytorch/vision.git")
 
     for f in Path("./vision/references/detection/").glob("*.py"):
-        shutil.copy(f, ".")
+        f_dst = (Path(".") / f.name)
+        print(f"Copy: {f.resolve()} -> {f_dst.resolve()}")
+        shutil.copy(f, f_dst)
+
+
+assert Path("engine.py").exists()
+assert Path("transforms.py").exists()
 
 # imports
 from engine import train_one_epoch, evaluate
 import transforms as T
 import utils
 
-assert Path("transforms.py").exists()
 
 # Internal Cell
 
