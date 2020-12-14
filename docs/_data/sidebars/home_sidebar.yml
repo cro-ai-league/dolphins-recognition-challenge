@@ -12,15 +12,6 @@ entries:
     - output: web,pdf
       title: Datasets
       url: Datasets.html
-    - output: web,pdf
-      title: Image transformations
-      url: tensor_transforms.html
-    - output: web,pdf
-      title: Welcome to torchvision's new video API
-      url: video_api.html
-    - output: web,pdf
-      title: Title
-      url: sanity_checks.html
     output: web
     title: dolphins_recognition_challenge
   output: web

@@ -32,13 +32,13 @@ nb_path: "notebooks/00_Datasets.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Copy: /tf/airt/vision/references/detection/train.py -&gt; /tf/airt/train.py
-Copy: /tf/airt/vision/references/detection/utils.py -&gt; /tf/airt/utils.py
-Copy: /tf/airt/vision/references/detection/engine.py -&gt; /tf/airt/engine.py
-Copy: /tf/airt/vision/references/detection/transforms.py -&gt; /tf/airt/transforms.py
-Copy: /tf/airt/vision/references/detection/coco_utils.py -&gt; /tf/airt/coco_utils.py
-Copy: /tf/airt/vision/references/detection/coco_eval.py -&gt; /tf/airt/coco_eval.py
-Copy: /tf/airt/vision/references/detection/group_by_aspect_ratio.py -&gt; /tf/airt/group_by_aspect_ratio.py
+<pre>Copy: /tmp/tmp60nx0yph/vision/references/detection/coco_eval.py -&gt; /tf/airt/coco_eval.py
+Copy: /tmp/tmp60nx0yph/vision/references/detection/train.py -&gt; /tf/airt/train.py
+Copy: /tmp/tmp60nx0yph/vision/references/detection/coco_utils.py -&gt; /tf/airt/coco_utils.py
+Copy: /tmp/tmp60nx0yph/vision/references/detection/engine.py -&gt; /tf/airt/engine.py
+Copy: /tmp/tmp60nx0yph/vision/references/detection/utils.py -&gt; /tf/airt/utils.py
+Copy: /tmp/tmp60nx0yph/vision/references/detection/transforms.py -&gt; /tf/airt/transforms.py
+Copy: /tmp/tmp60nx0yph/vision/references/detection/group_by_aspect_ratio.py -&gt; /tf/airt/group_by_aspect_ratio.py
 </pre>
 </div>
 </div>
@@ -189,7 +189,7 @@ Copy: /tf/airt/vision/references/detection/group_by_aspect_ratio.py -&gt; /tf/ai
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="DolphinsInstanceSegmentationDataset" class="doc_header"><code>class</code> <code>DolphinsInstanceSegmentationDataset</code><a href="https://github.cro-ai-league.com/dolphins-recognition-challenge/dolphins_recognition_challenge/tree/master/dolphins_recognition_challenge/datasets.py#L147" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DolphinsInstanceSegmentationDataset</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwds</code></strong>) :: <code>Dataset</code></p>
+<h2 id="DolphinsInstanceSegmentationDataset" class="doc_header"><code>class</code> <code>DolphinsInstanceSegmentationDataset</code><a href="https://github.cro-ai-league.com/dolphins-recognition-challenge/dolphins_recognition_challenge/tree/master/dolphins_recognition_challenge/datasets.py#L157" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DolphinsInstanceSegmentationDataset</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwds</code></strong>) :: <code>Dataset</code></p>
 </blockquote>
 <p>Instance segmentation dataset</p>
 
@@ -233,7 +233,7 @@ Copy: /tf/airt/vision/references/detection/group_by_aspect_ratio.py -&gt; /tf/ai
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(&lt;PIL.Image.Image image mode=RGB size=750x500 at 0x7F9D7B953438&gt;,
+<pre>(&lt;PIL.Image.Image image mode=RGB size=750x500 at 0x7F95ED9A9BA8&gt;,
  {&#39;boxes&#39;: tensor([[539., 236., 734., 320.],
           [301., 248., 554., 339.]]),
   &#39;labels&#39;: tensor([1, 1]),
@@ -288,7 +288,7 @@ Copy: /tf/airt/vision/references/detection/group_by_aspect_ratio.py -&gt; /tf/ai
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;torch.utils.data.dataloader.DataLoader at 0x7f9d7b968278&gt;</pre>
+<pre>&lt;torch.utils.data.dataloader.DataLoader at 0x7f95ed978588&gt;</pre>
 </div>
 
 </div>
@@ -316,7 +316,7 @@ Copy: /tf/airt/vision/references/detection/group_by_aspect_ratio.py -&gt; /tf/ai
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_dataset" class="doc_header"><code>get_dataset</code><a href="https://github.cro-ai-league.com/dolphins-recognition-challenge/dolphins_recognition_challenge/tree/master/dolphins_recognition_challenge/datasets.py#L289" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_dataset</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'segmentation'</code></em>, <strong><code>get_transform</code></strong>:<code>Callable</code>[<code>bool</code>, <code>Callable</code>]=<em><code>&lt;lambda&gt;</code></em>, <strong><code>batch_size</code></strong>:<code>int</code>=<em><code>4</code></em>, <strong><code>val_split</code></strong>:<code>float</code>=<em><code>0.2</code></em>, <strong><code>num_workers</code></strong>:<code>int</code>=<em><code>4</code></em>)</p>
+<h4 id="get_dataset" class="doc_header"><code>get_dataset</code><a href="https://github.cro-ai-league.com/dolphins-recognition-challenge/dolphins_recognition_challenge/tree/master/dolphins_recognition_challenge/datasets.py#L299" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_dataset</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'segmentation'</code></em>, <strong><code>get_transform</code></strong>:<code>Callable</code>[<code>bool</code>, <code>Callable</code>]=<em><code>&lt;lambda&gt;</code></em>, <strong><code>batch_size</code></strong>:<code>int</code>=<em><code>4</code></em>, <strong><code>val_split</code></strong>:<code>float</code>=<em><code>0.2</code></em>, <strong><code>num_workers</code></strong>:<code>int</code>=<em><code>4</code></em>)</p>
 </blockquote>
 <p>Get one of two datasets available. The parameter <code>name</code> can be one of 'segmentation' and 'classification'</p>
 

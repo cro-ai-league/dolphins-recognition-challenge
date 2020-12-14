@@ -23,6 +23,7 @@ from zipfile import ZipFile
 
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from torchvision.models.detection.mask_rcnn import MaskRCNNPredictor
+from tempfile import TemporaryDirectory
 
 import git
 
@@ -31,18 +32,27 @@ import git
 # Download TorchVision repo to use some files from
 # references/detection
 
-if not Path("vision").exists():
+if not Path("coco_utils.py").exists():
 
-    git.Git(".").clone("https://github.com/pytorch/vision.git")
+    with TemporaryDirectory() as d:
+        vision_root = Path(d) / "vision"
 
-    for f in Path("./vision/references/detection/").glob("*.py"):
-        f_dst = (Path(".") / f.name)
-        print(f"Copy: {f.resolve()} -> {f_dst.resolve()}")
-        shutil.copy(f, f_dst)
+        git.repo.base.Repo.clone_from(url="https://github.com/pytorch/vision.git", to_path=vision_root)
+        assert vision_root.exists() and vision_root.is_dir()
 
+        detection_root = vision_root / "references" / "detection"
+        py_files = list(detection_root.glob("**/*.py"))
+        assert len(py_files) >= 7
+
+        for f_src in py_files:
+            f_dst = (Path(".") / f_src.name)
+            print(f"Copy: {f_src.resolve()} -> {f_dst.resolve()}")
+            shutil.copy(f_src, f_dst)
+            assert f_dst.exists() and not f_dst.is_dir()
 
 assert Path("engine.py").exists()
 assert Path("transforms.py").exists()
+assert Path("coco_utils.py").exists()
 
 # imports
 from engine import train_one_epoch, evaluate
