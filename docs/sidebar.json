@@ -1,6 +1,9 @@
 {
   "dolphins_recognition_challenge": {
     "Overview": "/",
-    "Datasets": "Dataset.html"
+    "Datasets": "Datasets.html",
+    "Image transformations": "tensor_transforms.html",
+    "Welcome to torchvision's new video API": "video_api.html",
+    "Title": "sanity_checks.html"
   }
 }

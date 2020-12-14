@@ -9,6 +9,9 @@
 _tmp*
 tmp*
 tags
+notebooks/*.py
+notebooks/vision
+notebooks/data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -2,7 +2,11 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"get_dataset": "00_Dataset.ipynb"}
+index = {"dataset_url": "00_Datasets.ipynb",
+         "dataset_root": "00_Datasets.ipynb",
+         "dataset_zip": "00_Datasets.ipynb",
+         "DolphinsInstanceSegmentationDataset": "00_Datasets.ipynb",
+         "get_dataset": "00_Datasets.ipynb"}
 
 modules = ["datasets.py"]
 
