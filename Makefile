@@ -19,6 +19,7 @@ docs_serve: docs
 
 docs: $(SRC)
 	nbdev_build_docs
+	cd docs; bundle install; cd ..
 	touch docs
 
 test:
