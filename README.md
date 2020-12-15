@@ -1,6 +1,8 @@
 # Dolphins recognition challenge
-> The challenge has two parts: instance segmentation of dolphins in the photo and recognition of an individual dolphin from the photo. 
+> The challenge has two parts:
 
+
+!["Croatian AI League"](notebooks/images/AILeague_logo-800x452.png)
 
 ## Install
 
@@ -8,4 +10,22 @@
 
 ## How to use
 
-There is a sample notebook available in the repository, the link will be pasted later.
+```python
+from dolphins_recognition_challenge.datasets import get_dataset
+
+train_ds, val_ds = get_dataset("segmentation")
+
+type(train_ds)
+```
+
+
+
+
+    torch.utils.data.dataloader.DataLoader
+
+
+
+## Sponsors
+
+Here they go...
+
