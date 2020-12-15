@@ -10,8 +10,8 @@ index = {"dataset_url": "00_Datasets.ipynb",
 
 modules = ["datasets.py"]
 
-doc_url = "https://pages.github.cro-ai-league.com./dolphins-recognition-challenge/dolphins_recognition_challenge/"
+doc_url = "https://cro-ai-league.github.io/dolphins-recognition-challenge/"
 
-git_url = "https://github.cro-ai-league.com/dolphins-recognition-challenge/dolphins_recognition_challenge/tree/master/"
+git_url = "https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/"
 
 def custom_doc_links(name): return None
