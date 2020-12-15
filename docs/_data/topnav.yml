@@ -2,7 +2,7 @@ topnav:
 - title: Topnav
   items:
     - title: github
-      external_url: https://github.cro-ai-league.com/dolphins-recognition-challenge/nbdev_template/tree/master/
+      external_url: https://github.com/cro-ai-league/dolphins-recognition-challenge/
 
 #Topnav dropdowns
 topnav_dropdowns:
