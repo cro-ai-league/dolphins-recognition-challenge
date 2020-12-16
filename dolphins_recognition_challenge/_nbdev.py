@@ -6,9 +6,13 @@ index = {"dataset_url": "00_Datasets.ipynb",
          "dataset_root": "00_Datasets.ipynb",
          "dataset_zip": "00_Datasets.ipynb",
          "DolphinsInstanceSegmentationDataset": "00_Datasets.ipynb",
+         "stack_imgs": "00_Datasets.ipynb",
+         "display_batches": "00_Datasets.ipynb",
+         "get_image2tensor_transforms": "00_Datasets.ipynb",
          "get_dataset": "00_Datasets.ipynb"}
 
-modules = ["datasets.py"]
+modules = ["datasets.py",
+           "instance_segmentation.py"]
 
 doc_url = "https://cro-ai-league.github.io/dolphins-recognition-challenge/"
 
