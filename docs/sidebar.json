@@ -1,6 +1,9 @@
 {
   "dolphins_recognition_challenge": {
     "Overview": "/",
-    "Datasets": "Datasets.html"
+    "Tutorial": "Tutorial.html",
+    "Datasets": "Datasets.html",
+    "Model": "Model.html",
+    "Utilities": "Utils.html"
   }
 }
