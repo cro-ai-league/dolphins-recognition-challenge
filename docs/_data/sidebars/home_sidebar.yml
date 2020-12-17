@@ -10,11 +10,17 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Tutorial
+      url: Tutorial.html
+    - output: web,pdf
       title: Datasets
       url: Datasets.html
     - output: web,pdf
-      title: '1. Challenge: dolphin instance segmentation model'
-      url: Dolphin_instance_segmentation_challenge.html
+      title: Model
+      url: Model.html
+    - output: web,pdf
+      title: Utilities
+      url: Utils.html
     output: web
     title: dolphins_recognition_challenge
   output: web

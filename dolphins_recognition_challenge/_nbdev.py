@@ -2,17 +2,44 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"dataset_url": "00_Datasets.ipynb",
-         "dataset_root": "00_Datasets.ipynb",
-         "dataset_zip": "00_Datasets.ipynb",
-         "DolphinsInstanceSegmentationDataset": "00_Datasets.ipynb",
-         "stack_imgs": "00_Datasets.ipynb",
-         "display_batches": "00_Datasets.ipynb",
-         "get_image2tensor_transforms": "00_Datasets.ipynb",
-         "get_dataset": "00_Datasets.ipynb"}
+index = {"dataset_url": "01_Datasets.ipynb",
+         "dataset_root": "01_Datasets.ipynb",
+         "dataset_zip": "01_Datasets.ipynb",
+         "DolphinsInstanceSegmentationDataset": "01_Datasets.ipynb",
+         "stack_imgs": "01_Datasets.ipynb",
+         "display_batches": "01_Datasets.ipynb",
+         "get_image2tensor_transforms": "01_Datasets.ipynb",
+         "get_dataset": "01_Datasets.ipynb",
+         "Compose": "01_Datasets.ipynb",
+         "RandomHorizontalFlip": "01_Datasets.ipynb",
+         "ToTensor": "01_Datasets.ipynb",
+         "device": "02_Model.ipynb",
+         "train_one_epoch": "02_Model.ipynb",
+         "show_prediction": "02_Model.ipynb",
+         "show_predictions": "02_Model.ipynb",
+         "get_true_and_predicted_masks": "02_Model.ipynb",
+         "iou_metric_pair": "02_Model.ipynb",
+         "iou_metric_list": "02_Model.ipynb",
+         "largest_values_in_row_colums": "02_Model.ipynb",
+         "iou_metric": "02_Model.ipynb",
+         "SmoothedValue": "09_Utils.ipynb",
+         "all_gather": "09_Utils.ipynb",
+         "reduce_dict": "09_Utils.ipynb",
+         "MetricLogger": "09_Utils.ipynb",
+         "collate_fn": "09_Utils.ipynb",
+         "warmup_lr_scheduler": "09_Utils.ipynb",
+         "mkdir": "09_Utils.ipynb",
+         "setup_for_distributed": "09_Utils.ipynb",
+         "is_dist_avail_and_initialized": "09_Utils.ipynb",
+         "get_world_size": "09_Utils.ipynb",
+         "get_rank": "09_Utils.ipynb",
+         "is_main_process": "09_Utils.ipynb",
+         "save_on_master": "09_Utils.ipynb",
+         "init_distributed_mode": "09_Utils.ipynb"}
 
 modules = ["datasets.py",
-           "instance_segmentation.py"]
+           "instance_segmentation/model.py",
+           "utils.py"]
 
 doc_url = "https://cro-ai-league.github.io/dolphins-recognition-challenge/"
 

@@ -1,7 +1,9 @@
 {
   "dolphins_recognition_challenge": {
     "Overview": "/",
+    "Tutorial": "Tutorial.html",
     "Datasets": "Datasets.html",
-    "1. Challenge: dolphin instance segmentation model": "Dolphin_instance_segmentation_challenge.html"
+    "Model": "Model.html",
+    "Utilities": "Utils.html"
   }
 }
