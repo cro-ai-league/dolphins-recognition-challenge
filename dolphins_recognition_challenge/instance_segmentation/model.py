@@ -96,7 +96,7 @@ def show_prediction(
     model,
     img: torch.Tensor(),
     *,
-    score_limit: float=0.5,
+    score_threshold: float=0.5,
     width: int=800
 ) -> None:
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
@@ -113,7 +113,7 @@ def show_prediction(
 
     for i in range(predicted_masks.shape[0]):
         score = scores[i]
-        if score >= score_limit:
+        if score >= score_threshold:
             bg = img_bg.copy()
             fg = Image.fromarray(predicted_masks[i, 0].mul(255).byte().cpu().numpy())
             bg.paste(fg.convert("RGB"), (0, 0), fg)
@@ -130,7 +130,7 @@ def show_predictions(
     data_loader=None,
     dataset=None,
     n=None,
-    score_limit=0.5,
+    score_threshold=0.5,
     width=800
 ):
     assert (data_loader is None) ^ (dataset is None), f"only one of dataloader ({dataloader}) and dataset({dataset}) must be defined"
@@ -144,14 +144,14 @@ def show_predictions(
         n = min(n, len(dataset))
 
     for i in range(n):
-        show_prediction(model, img=dataset[i][0], score_limit=score_limit, width=width)
+        show_prediction(model, img=dataset[i][0], score_threshold=score_threshold, width=width)
 
 # Internal Cell
 
 def get_true_and_predicted_masks(
     model: torchvision.models.detection.mask_rcnn.MaskRCNN,
     example: Tuple[torch.Tensor, Dict[str, torch.Tensor]],
-    score_limit: float = 0.5,
+    score_threshold: float = 0.5,
 ) -> Tuple[PIL.Image.Image, Dict[str, np.array]]:
     """ Returns a PIL image and dictionary containing both true and predicted masks as numpy arrays.
     """
@@ -169,7 +169,7 @@ def get_true_and_predicted_masks(
     pred_scores = predictions[0]["scores"].cpu().numpy()
 
     pred_masks = predictions[0]["masks"].squeeze(1).mul(255).cpu().numpy().astype(np.int8)
-    pred_masks = np.squeeze(pred_masks[np.argwhere(pred_scores > score_limit), :, :], 1)
+    pred_masks = np.squeeze(pred_masks[np.argwhere(pred_scores >= score_threshold), :, :], 1)
 
     return ToPILImage()(img), {"true": true_masks, "predicted": pred_masks}
 
@@ -266,6 +266,9 @@ def _resize_to_square(xs: np.array) -> np.array:
 def largest_values_in_row_colums(xs: np.array) -> List[float]:
     """ Approximates the largest value in each row/column.
     """
+    if xs.shape == (0, ):
+        return [0]
+
     assert len(xs.shape) == 2
 
     # resize matrix to square dimensions if needed

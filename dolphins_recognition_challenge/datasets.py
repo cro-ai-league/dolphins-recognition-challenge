@@ -136,14 +136,15 @@ class DolphinsInstanceSegmentationDataset(torch.utils.data.Dataset):
         self,
         root: Path,
         tensor_transforms: Optional[Callable[[Image.Image], Any]]=None,
+        n_samples: int=-1
     ):
         self.root = root
         self.tensor_transforms = tensor_transforms
         # load all image files, sorting them to
         # ensure that they are aligned
-        self.img_paths = sorted((root / "JPEGImages").glob("*.*"))
-        self.label_paths = sorted((root / "SegmentationClass").glob("*.*"))
-        self.mask_paths = sorted((root / "SegmentationObject").glob("*.*"))
+        self.img_paths = sorted((root / "JPEGImages").glob("*.*"))[:n_samples]
+        self.label_paths = sorted((root / "SegmentationClass").glob("*.*"))[:n_samples]
+        self.mask_paths = sorted((root / "SegmentationObject").glob("*.*"))[:n_samples]
 
         self.class_colors = _enumerate_colors_for_fnames(self.label_paths)
 
@@ -242,7 +243,8 @@ def _get_instance_segmentation_dataset(
         [bool], Callable[[Image.Image], Any]
     ] = _get_tensor_transforms,
     batch_size: int = 4,
-    num_workers: int = 4
+    num_workers: int = 4,
+    n_samples: int=-1,
 ) -> Tuple[
     torch.utils.data.dataloader.DataLoader, torch.utils.data.dataloader.DataLoader
 ]:
@@ -259,10 +261,12 @@ def _get_instance_segmentation_dataset(
     dataset = DolphinsInstanceSegmentationDataset(
         dataset_root / "Train",
         tensor_transforms=get_tensor_transforms(train=True),
+        n_samples=n_samples
     )
     dataset_test = DolphinsInstanceSegmentationDataset(
         dataset_root / "Val",
         tensor_transforms=get_tensor_transforms(train=False),
+        n_samples=n_samples
     )
 
     # define training and validation data loaders
@@ -326,6 +330,7 @@ def get_dataset(
     get_tensor_transforms: Callable[[bool], Callable[[Image.Image], Any]] = get_image2tensor_transforms,
     batch_size: int = 4,
     num_workers: int = 4,
+    n_samples: int=-1,
 ) -> Tuple[
     torch.utils.data.dataloader.DataLoader, torch.utils.data.dataloader.DataLoader
 ]:
@@ -341,6 +346,7 @@ def get_dataset(
             get_tensor_transforms=get_tensor_transforms,
             batch_size=batch_size,
             num_workers=num_workers,
+            n_samples=n_samples,
         )
     elif name == "classification":
         raise NotImplementedError()
