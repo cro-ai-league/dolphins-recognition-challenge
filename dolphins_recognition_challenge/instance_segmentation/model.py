@@ -16,7 +16,6 @@ import PIL
 from PIL import Image
 from zipfile import ZipFile
 import random
-import utils
 import math
 
 import torch
@@ -29,7 +28,7 @@ from torchvision.models.detection.mask_rcnn import MaskRCNNPredictor
 from torchvision.transforms import ToPILImage
 
 from ..datasets import stack_imgs
-from ..utils import *
+from dolphins_recognition_challenge import utils
 
 from ..datasets import get_dataset
 

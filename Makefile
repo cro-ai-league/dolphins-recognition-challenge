@@ -23,7 +23,7 @@ docs: $(SRC)
 	touch docs
 
 test:
-	nbdev_test_nbs
+	nbdev_test_nbs --n_workers 1
 
 release: pypi
 	nbdev_conda_package
