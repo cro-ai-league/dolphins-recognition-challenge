@@ -130,7 +130,7 @@ nb_path: "notebooks/02_Model.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="train_one_epoch" class="doc_header"><code>train_one_epoch</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>train_one_epoch</code>(<strong><code>model</code></strong>, <strong><code>optimizer</code></strong>, <strong><code>data_loader</code></strong>, <strong><code>device</code></strong>, <strong><code>epoch</code></strong>, <strong><code>print_freq</code></strong>=<em><code>10</code></em>)</p>
+<h4 id="train_one_epoch" class="doc_header"><code>train_one_epoch</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>train_one_epoch</code>(<strong><code>model</code></strong>, <strong><code>optimizer</code></strong>, <strong><code>data_loader</code></strong>, <strong><code>device</code></strong>, <strong><code>epoch</code></strong>, <strong><code>print_freq</code></strong>=<em><code>10</code></em>)</p>
 </blockquote>
 <p>Trains one epoch of the model. Copied from the reference implementation from <a href="https://github.com/pytorch/vision.git">https://github.com/pytorch/vision.git</a>.</p>
 
@@ -319,7 +319,7 @@ Epoch: [19] Total time: 0:00:21 (0.5351 s / it)
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="show_prediction" class="doc_header"><code>show_prediction</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L95" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>show_prediction</code>(<strong><code>model</code></strong>, <strong><code>img</code></strong>:<code>tensor([])</code>, <strong><code>score_threshold</code></strong>:<code>float</code>=<em><code>0.5</code></em>, <strong><code>width</code></strong>:<code>int</code>=<em><code>800</code></em>)</p>
+<h4 id="show_prediction" class="doc_header"><code>show_prediction</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>show_prediction</code>(<strong><code>model</code></strong>, <strong><code>img</code></strong>:<code>tensor([])</code>, <strong><code>score_threshold</code></strong>:<code>float</code>=<em><code>0.5</code></em>, <strong><code>width</code></strong>:<code>int</code>=<em><code>800</code></em>)</p>
 </blockquote>
 
 </div>
@@ -402,7 +402,7 @@ Epoch: [19] Total time: 0:00:21 (0.5351 s / it)
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="show_predictions" class="doc_header"><code>show_predictions</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L127" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>show_predictions</code>(<strong><code>model</code></strong>, <strong><code>data_loader</code></strong>=<em><code>None</code></em>, <strong><code>dataset</code></strong>=<em><code>None</code></em>, <strong><code>n</code></strong>=<em><code>None</code></em>, <strong><code>score_threshold</code></strong>=<em><code>0.5</code></em>, <strong><code>width</code></strong>=<em><code>800</code></em>)</p>
+<h4 id="show_predictions" class="doc_header"><code>show_predictions</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L128" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>show_predictions</code>(<strong><code>model</code></strong>, <strong><code>data_loader</code></strong>=<em><code>None</code></em>, <strong><code>dataset</code></strong>=<em><code>None</code></em>, <strong><code>n</code></strong>=<em><code>None</code></em>, <strong><code>score_threshold</code></strong>=<em><code>0.5</code></em>, <strong><code>width</code></strong>=<em><code>800</code></em>)</p>
 </blockquote>
 
 </div>
@@ -544,7 +544,7 @@ Epoch: [19] Total time: 0:00:21 (0.5351 s / it)
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="iou_metric_pair" class="doc_header"><code>iou_metric_pair</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L178" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>iou_metric_pair</code>(<strong><code>binary_segmentation</code></strong>:<code>array</code>, <strong><code>binary_gt_label</code></strong>:<code>array</code>)</p>
+<h4 id="iou_metric_mask_pair" class="doc_header"><code>iou_metric_mask_pair</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L179" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>iou_metric_mask_pair</code>(<strong><code>binary_segmentation</code></strong>:<code>array</code>, <strong><code>binary_gt_label</code></strong>:<code>array</code>)</p>
 </blockquote>
 <p>Compute the IOU between two binary segmentation (typically one ground truth and a predicted one).
 Input:
@@ -587,7 +587,7 @@ Output:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">img</span><span class="p">,</span> <span class="n">masks</span> <span class="o">=</span> <span class="n">get_true_and_predicted_masks</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_loader_test</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="c1"># calculate the metrics</span>
-<span class="n">iou_metric_pair</span><span class="p">(</span>
+<span class="n">iou_metric_mask_pair</span><span class="p">(</span>
     <span class="n">binary_segmentation</span><span class="o">=</span><span class="n">masks</span><span class="p">[</span><span class="s2">&quot;predicted&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span>
     <span class="n">binary_gt_label</span><span class="o">=</span><span class="n">masks</span><span class="p">[</span><span class="s2">&quot;true&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span>
 <span class="p">)</span>
@@ -605,7 +605,7 @@ Output:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.597240354433695</pre>
+<pre>0.009150058637564403</pre>
 </div>
 
 </div>
@@ -634,7 +634,7 @@ Output:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="iou_metric_list" class="doc_header"><code>iou_metric_list</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L222" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>iou_metric_list</code>(<strong><code>masks</code></strong>:<code>Dict</code>[<code>str</code>, <code>array</code>])</p>
+<h4 id="iou_metric_matrix_of_example" class="doc_header"><code>iou_metric_matrix_of_example</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L224" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>iou_metric_matrix_of_example</code>(<strong><code>model</code></strong>:<code>MaskRCNN</code>, <strong><code>example</code></strong>:<code>Tuple</code>[<code>Tensor</code>, <code>Dict</code>[<code>str</code>, <code>Tensor</code>]], <strong><code>score_threshold</code></strong>:<code>float</code>=<em><code>0.5</code></em>)</p>
 </blockquote>
 
 </div>
@@ -661,7 +661,7 @@ Output:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metrics</span> <span class="o">=</span> <span class="n">iou_metric_list</span><span class="p">(</span><span class="n">masks</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metrics</span> <span class="o">=</span> <span class="n">iou_metric_matrix_of_example</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_loader_test</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">0.5</span><span class="p">)</span>
 
 <span class="n">cm</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">light_palette</span><span class="p">(</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -681,39 +681,39 @@ Output:
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <style  type="text/css" >
-#T_07d175a6_4187_11eb_8f97_0242ac110002row0_col0,#T_07d175a6_4187_11eb_8f97_0242ac110002row1_col2,#T_07d175a6_4187_11eb_8f97_0242ac110002row2_col1{
-            background-color:  #add8e6;
-            color:  #000000;
-        }#T_07d175a6_4187_11eb_8f97_0242ac110002row0_col1{
-            background-color:  #dae9ee;
-            color:  #000000;
-        }#T_07d175a6_4187_11eb_8f97_0242ac110002row0_col2{
-            background-color:  #eef1f1;
-            color:  #000000;
-        }#T_07d175a6_4187_11eb_8f97_0242ac110002row1_col0,#T_07d175a6_4187_11eb_8f97_0242ac110002row1_col1,#T_07d175a6_4187_11eb_8f97_0242ac110002row2_col2{
+#T_eb649760_424c_11eb_bf57_0242ac110002row0_col0,#T_eb649760_424c_11eb_bf57_0242ac110002row0_col1,#T_eb649760_424c_11eb_bf57_0242ac110002row2_col2{
             background-color:  #eff1f2;
             color:  #000000;
-        }#T_07d175a6_4187_11eb_8f97_0242ac110002row2_col0{
-            background-color:  #ebeff1;
+        }#T_eb649760_424c_11eb_bf57_0242ac110002row0_col2,#T_eb649760_424c_11eb_bf57_0242ac110002row1_col0,#T_eb649760_424c_11eb_bf57_0242ac110002row2_col1{
+            background-color:  #add8e6;
             color:  #000000;
-        }</style><table id="T_07d175a6_4187_11eb_8f97_0242ac110002" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >0</th>        <th class="col_heading level0 col1" >1</th>        <th class="col_heading level0 col2" >2</th>    </tr></thead><tbody>
+        }#T_eb649760_424c_11eb_bf57_0242ac110002row1_col1{
+            background-color:  #deebef;
+            color:  #000000;
+        }#T_eb649760_424c_11eb_bf57_0242ac110002row1_col2{
+            background-color:  #eff1f1;
+            color:  #000000;
+        }#T_eb649760_424c_11eb_bf57_0242ac110002row2_col0{
+            background-color:  #eef0f1;
+            color:  #000000;
+        }</style><table id="T_eb649760_424c_11eb_bf57_0242ac110002" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >0</th>        <th class="col_heading level0 col1" >1</th>        <th class="col_heading level0 col2" >2</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_07d175a6_4187_11eb_8f97_0242ac110002level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_07d175a6_4187_11eb_8f97_0242ac110002row0_col0" class="data row0 col0" >0.597240</td>
-                        <td id="T_07d175a6_4187_11eb_8f97_0242ac110002row0_col1" class="data row0 col1" >0.164415</td>
-                        <td id="T_07d175a6_4187_11eb_8f97_0242ac110002row0_col2" class="data row0 col2" >0.009547</td>
+                        <th id="T_eb649760_424c_11eb_bf57_0242ac110002level0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_eb649760_424c_11eb_bf57_0242ac110002row0_col0" class="data row0 col0" >0.009150</td>
+                        <td id="T_eb649760_424c_11eb_bf57_0242ac110002row0_col1" class="data row0 col1" >0.000000</td>
+                        <td id="T_eb649760_424c_11eb_bf57_0242ac110002row0_col2" class="data row0 col2" >0.714603</td>
             </tr>
             <tr>
-                        <th id="T_07d175a6_4187_11eb_8f97_0242ac110002level0_row1" class="row_heading level0 row1" >1</th>
-                        <td id="T_07d175a6_4187_11eb_8f97_0242ac110002row1_col0" class="data row1 col0" >0.008249</td>
-                        <td id="T_07d175a6_4187_11eb_8f97_0242ac110002row1_col1" class="data row1 col1" >0.000000</td>
-                        <td id="T_07d175a6_4187_11eb_8f97_0242ac110002row1_col2" class="data row1 col2" >0.702779</td>
+                        <th id="T_eb649760_424c_11eb_bf57_0242ac110002level0_row1" class="row_heading level0 row1" >1</th>
+                        <td id="T_eb649760_424c_11eb_bf57_0242ac110002row1_col0" class="data row1 col0" >0.640258</td>
+                        <td id="T_eb649760_424c_11eb_bf57_0242ac110002row1_col1" class="data row1 col1" >0.144383</td>
+                        <td id="T_eb649760_424c_11eb_bf57_0242ac110002row1_col2" class="data row1 col2" >0.007039</td>
             </tr>
             <tr>
-                        <th id="T_07d175a6_4187_11eb_8f97_0242ac110002level0_row2" class="row_heading level0 row2" >2</th>
-                        <td id="T_07d175a6_4187_11eb_8f97_0242ac110002row2_col0" class="data row2 col0" >0.042869</td>
-                        <td id="T_07d175a6_4187_11eb_8f97_0242ac110002row2_col1" class="data row2 col1" >0.520857</td>
-                        <td id="T_07d175a6_4187_11eb_8f97_0242ac110002row2_col2" class="data row2 col2" >0.000000</td>
+                        <th id="T_eb649760_424c_11eb_bf57_0242ac110002level0_row2" class="row_heading level0 row2" >2</th>
+                        <td id="T_eb649760_424c_11eb_bf57_0242ac110002row2_col0" class="data row2 col0" >0.022897</td>
+                        <td id="T_eb649760_424c_11eb_bf57_0242ac110002row2_col1" class="data row2 col1" >0.562500</td>
+                        <td id="T_eb649760_424c_11eb_bf57_0242ac110002row2_col2" class="data row2 col2" >0.000000</td>
             </tr>
     </tbody></table>
 </div>
@@ -744,7 +744,7 @@ Output:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="largest_values_in_row_colums" class="doc_header"><code>largest_values_in_row_colums</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L266" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>largest_values_in_row_colums</code>(<strong><code>xs</code></strong>:<code>array</code>)</p>
+<h4 id="largest_values_in_row_colums" class="doc_header"><code>largest_values_in_row_colums</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L275" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>largest_values_in_row_colums</code>(<strong><code>xs</code></strong>:<code>array</code>)</p>
 </blockquote>
 <p>Approximates the largest value in each row/column.</p>
 
@@ -809,14 +809,8 @@ Output:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="iou_metric" class="doc_header"><code>iou_metric</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L291" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>iou_metric</code>(<strong><code>masks</code></strong>:<code>Dict</code>[<code>str</code>, <code>array</code>])</p>
+<h4 id="iou_metric_matched_of_example" class="doc_header"><code>iou_metric_matched_of_example</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L301" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>iou_metric_matched_of_example</code>(<strong><code>model</code></strong>:<code>MaskRCNN</code>, <strong><code>example</code></strong>:<code>Tuple</code>[<code>Tensor</code>, <code>Dict</code>[<code>str</code>, <code>Tensor</code>]], <strong><code>score_threshold</code></strong>:<code>float</code>=<em><code>0.5</code></em>)</p>
 </blockquote>
-<p>Compute the IOU between two binary segmentation lists (a possibly different number of ground truths and a predicted ones).
-Input:
-    binary_segmentation: binary 2D numpy array representing the region of interest as segmented by the algorithm
-    binary_gt_label: binary 2D numpy array representing the region of interest as provided in the database
-Output:
-    IOU: IOU between the segmentation and the ground truth</p>
 
 </div>
 
@@ -849,7 +843,7 @@ Output:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metric</span> <span class="o">=</span> <span class="n">iou_metric</span><span class="p">(</span><span class="n">masks</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metric</span> <span class="o">=</span> <span class="n">iou_metric_matched_of_example</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_loader_test</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="mf">0.5</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average IOU metric on given example is </span><span class="si">{</span><span class="n">metric</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -864,9 +858,85 @@ Output:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Average IOU metric on given example is 0.607
+<pre>Average IOU metric on given example is 0.411
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="iou_metric" class="doc_header"><code>iou_metric</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/instance_segmentation/model.py#L316" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>iou_metric</code>(<strong><code>model</code></strong>:<code>MaskRCNN</code>, <strong><code>data_loader</code></strong>:<code>DataLoader</code>, <strong><code>score_threshold</code></strong>:<code>float</code>=<em><code>0.5</code></em>)</p>
+</blockquote>
+<p>Calculate IOU metric on the whole dataloader</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">iou_metric</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_loader_test</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 24.4 s, sys: 51.3 ms, total: 24.5 s
+Wall time: 5.05 s
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.46347905142673756</pre>
+</div>
+
 </div>
 
 </div>
