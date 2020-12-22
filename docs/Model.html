@@ -401,6 +401,22 @@ nb_path: "notebooks/02_Model.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Metric-explanation">Metric explanation<a class="anchor-link" href="#Metric-explanation"> </a></h1><p>For evaluating instance segmentation results, we would be using a metric called <code>Intersection over Union</code> or <code>IoU</code>. 
+The IoU metric is a method to quantify the percent overlap between the ground-truth (or target) mask and the predicted (output) mask.  i. e., the IoU metric measures the number of pixels common between the ground-truth and prediction masks divided by the total number of pixels present across both masks and is mathematically represented as:</p>
+<p>{% raw %}
+$$IoU = \frac{{target \cap prediction}}{{target \cup prediction}}$$
+{% endraw %}</p>
+<p>As a visual example, let's suppose we're tasked with calculating the IoU score of a prediction mask (colored yellow), given the ground truth labeled mask (colored blue). The intersection (A∩B) is comprised of the pixels found in both the prediction mask and the ground truth mask (denoted in green color), whereas the union (A∪B) is simply comprised of all pixels found in either the prediction or target mask.</p>
+<p><img src="/dolphins-recognition-challenge/images/Iou_example1.jpg" alt="images/Iou_example1.jpg"></p>
+<p>As can be seen from the above example, more the intersection or overlap between the ground truth and the predicted mask, greater is the IoU metric value. The maximum IoU metric value of 1 is obtained when both the predicted mask and ground-truth mask overlap perfectly and the minimum value of 0 is obtained when there is absolutely no overlap.</p>
+<p>In our instance segmentation scenario, for a single input image, the IoU is calculated for each predicted instance mask separately and averaged over all the predictions. 
+Further, to obtain the IoU score for the entire dataset, the IoU is calculated for each image and then averaged over all the images in the dataset.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
