@@ -10,7 +10,7 @@
 
 ## How to use
 
-```
+```python
 from dolphins_recognition_challenge.datasets import get_dataset
 
 train_ds, val_ds = get_dataset("segmentation")

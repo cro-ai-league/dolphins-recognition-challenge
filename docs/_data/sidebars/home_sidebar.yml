@@ -19,6 +19,9 @@ entries:
       title: Model
       url: Model.html
     - output: web,pdf
+      title: Submission
+      url: Submissions.html
+    - output: web,pdf
       title: Utilities
       url: Utils.html
     output: web
