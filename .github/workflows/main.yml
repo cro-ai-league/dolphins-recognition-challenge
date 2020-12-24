@@ -9,7 +9,7 @@ jobs:
       with:
         lfs: true
     - name: Download from S3
-      run: aws s3 cp https://s3.eu-central-1.amazonaws.com/ai-league.cisex.org/2020-2021/dolphins-instance-segmentation/saved_model/model.pt saved_model
+      run: aws s3 cp  s3://ai-league.cisex.org/2020-2021/dolphins-instance-segmentation/saved_model/ saved_model
            
     - uses: actions/setup-python@v1
       with:
