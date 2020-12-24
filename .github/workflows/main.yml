@@ -6,10 +6,12 @@ jobs:
     steps:
     - name: Checkout github repo
       uses: actions/checkout@v2
-      
+    - name: Check files in repo
+      run: ll
+
     - name: Download from S3
       run: aws s3 cp  arn:aws:s3:ai-league.cisex.org/2020-2021/dolphins-instance-segmentation/saved_model/ . --recursive
-      run: ll
+       
 
     - uses: actions/setup-python@v1
       with:
