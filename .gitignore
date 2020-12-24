@@ -1,5 +1,5 @@
 *.bak
-.gitattributes
+
 .last_checked
 .gitconfig
 *.bak
@@ -143,4 +143,5 @@ checklink/cookies.txt
 .gitconfig
 run_jupyter.sh
 notebooks/submission-iou=*
+.gitattributes
 
