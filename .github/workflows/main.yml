@@ -7,7 +7,7 @@ jobs:
     - name: Checkout github repo
       uses: actions/checkout@v2
     - name: Check files in repo
-      run: ll
+      run: ls -l
 
     - name: Download from S3
       run: aws s3 cp  arn:aws:s3:ai-league.cisex.org/2020-2021/dolphins-instance-segmentation/saved_model/ . --recursive
