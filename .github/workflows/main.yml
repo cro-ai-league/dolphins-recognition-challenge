@@ -8,7 +8,8 @@ jobs:
       uses: actions/checkout@v2
     - name: Check files in repo
       run: ls -l
-
+    - name: Wget model
+      run: wget https://s3.eu-central-1.amazonaws.com/ai-league.cisex.org/2020-2021/dolphins-instance-segmentation/saved_model/model.pt -P notebooks/saved_models
     
       
             
