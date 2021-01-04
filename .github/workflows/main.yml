@@ -5,15 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout github repo
-      uses: actions/checkout@v2
-    - name: Check files in repo
-      run: ls -l
+      uses: actions/checkout@v1
     - name: Wget model
       run: wget https://s3.eu-central-1.amazonaws.com/ai-league.cisex.org/2020-2021/dolphins-instance-segmentation/saved_model/model.pt -P notebooks/saved_models
-    
       
-            
-
     - uses: actions/setup-python@v1
       with:
         python-version: '3.7'
