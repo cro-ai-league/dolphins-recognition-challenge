@@ -6,8 +6,8 @@ title: Datasets
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Datasets for recognizing invidual dolphins from images"
-description: "Datasets for recognizing invidual dolphins from images"
+summary: "Datasets for recognizing invidual dolphins from images "
+description: "Datasets for recognizing invidual dolphins from images "
 nb_path: "notebooks/01_Datasets.ipynb"
 ---
 <!--
@@ -42,51 +42,6 @@ nb_path: "notebooks/01_Datasets.ipynb"
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # Download TorchVision repo to use some files from</span>
-<span class="c1"># # references/detection</span>
-
-<span class="c1"># if not Path(&quot;coco_utils.py&quot;).exists():</span>
-
-<span class="c1">#     with TemporaryDirectory() as d:</span>
-<span class="c1">#         vision_root = Path(d) / &quot;vision&quot;</span>
-        
-<span class="c1">#         git.repo.base.Repo.clone_from(url=&quot;https://github.com/pytorch/vision.git&quot;, to_path=vision_root)</span>
-<span class="c1">#         assert vision_root.exists() and vision_root.is_dir()</span>
-        
-<span class="c1">#         detection_root = vision_root / &quot;references&quot; / &quot;detection&quot;</span>
-<span class="c1">#         py_files = list(detection_root.glob(&quot;**/*.py&quot;))</span>
-<span class="c1">#         assert len(py_files) &gt;= 7</span>
-
-<span class="c1">#         for f_src in py_files:</span>
-<span class="c1">#             f_dst = (Path(&quot;.&quot;) / f_src.name)</span>
-<span class="c1">#             print(f&quot;Copy: {f_src.resolve()} -&gt; {f_dst.resolve()}&quot;)</span>
-<span class="c1">#             shutil.copy(f_src, f_dst)</span>
-<span class="c1">#             assert f_dst.exists() and not f_dst.is_dir()</span>
-
-<span class="c1"># assert Path(&quot;engine.py&quot;).exists()</span>
-<span class="c1"># assert Path(&quot;transforms.py&quot;).exists()</span>
-<span class="c1"># assert Path(&quot;coco_utils.py&quot;).exists()</span>
-
-<span class="c1"># # imports</span>
-<span class="c1"># from engine import train_one_epoch, evaluate</span>
-<span class="c1"># import transforms as T</span>
-<span class="c1"># import utils</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
