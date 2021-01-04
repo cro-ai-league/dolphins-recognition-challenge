@@ -143,5 +143,11 @@ checklink/cookies.txt
 .gitconfig
 run_jupyter.sh
 notebooks/submission-iou=*
+notebooks/tutorial/submission-iou=*
 .gitattributes
 
+notebooks/utils/
+docs/Convert_raw_image_to_jpg.html
+notebooks/saved_models/
+notebooks/tutorial/data/
+data/
