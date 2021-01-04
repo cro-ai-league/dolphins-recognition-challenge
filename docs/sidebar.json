@@ -1,10 +1,11 @@
 {
   "dolphins_recognition_challenge": {
     "Overview": "/",
-    "Tutorial": "Tutorial.html",
     "Datasets": "Datasets.html",
     "Model": "Model.html",
     "Submission": "Submissions.html",
-    "Utilities": "Utils.html"
+    "Utilities": "Utils.html",
+    "Tutorial": "Tutorial.html",
+    "Title": "Convert_raw_image_to_jpg.html"
   }
 }
