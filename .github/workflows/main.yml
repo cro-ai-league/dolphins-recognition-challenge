@@ -5,12 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout github repo
-      uses: actions/checkout@v2
-      with:
-        lfs: true
-    - name: Download from S3
-      run: aws s3 cp https://s3.eu-central-1.amazonaws.com/ai-league.cisex.org/2020-2021/dolphins-instance-segmentation/saved_model/model.pt saved_mod
-
+      uses: actions/checkout@v1
+    - name: Wget model
+      run: wget https://s3.eu-central-1.amazonaws.com/ai-league.cisex.org/2020-2021/dolphins-instance-segmentation/saved_model/model.pt -P notebooks/saved_models
+      
     - uses: actions/setup-python@v1
       with:
         python-version: '3.7'
@@ -25,16 +23,17 @@ jobs:
     - name: Check if all notebooks are cleaned
       run: |
         echo "Skipping check"
-        echo "Check we are starting with clean git checkout"
-        if [ -n "$(git status -uno -s)" ]; then echo "git status is not clean"; false; fi
-        echo "Trying to strip out notebooks"
-        nbdev_clean_nbs
-        echo "Check that strip out was unnecessary"
-        git status -s # display the status to see which nbs need cleaning up
-        if [ -n "$(git status -uno -s)" ]; then echo -e "!!! Detected unstripped out notebooks\n!!!Remember to run nbdev_install_git_hooks"; false; fi
+        # echo "Check we are starting with clean git checkout"
+        # if [ -n "$(git status -uno -s)" ]; then echo "git status is not clean"; false; fi
+        # echo "Trying to strip out notebooks"
+        # nbdev_clean_nbs
+        # echo "Check that strip out was unnecessary"
+        # git status -s # display the status to see which nbs need cleaning up
+        # if [ -n "$(git status -uno -s)" ]; then echo -e "!!! Detected unstripped out notebooks\n!!!Remember to run nbdev_install_git_hooks"; false; fi
     - name: Check if there is no diff library/notebooks
       run: |
         if [ -n "$(nbdev_diff_nbs)" ]; then echo -e "!!! Detected difference between the notebooks and the library"; false; fi
     - name: Run tests
       run: |
         nbdev_test_nbs
+
