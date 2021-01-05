@@ -151,4 +151,5 @@ notebooks/saved_models/
 notebooks/tutorial/data/
 data/
 tmp/
+docs/.bundle
 

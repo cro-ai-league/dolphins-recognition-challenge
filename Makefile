@@ -19,8 +19,10 @@ docs_serve: docs
 
 docs: $(SRC)
 	nbdev_build_docs
-	cd docs; bundle install; cd ..
+	cd docs; bundle install --path /tmp/vendor/bundle; cd ..
 	touch docs
+
+#	cd docs; bundle install; cd ..
 
 test:
 	nbdev_test_nbs --timing True --pause 2 --n_workers 1
