@@ -21,8 +21,13 @@ index = {"dataset_url": "01_Datasets.ipynb",
          "iou_metric_mask_pair": "02_Model.ipynb",
          "iou_metric_matrix_of_example": "02_Model.ipynb",
          "largest_values_in_row_colums": "02_Model.ipynb",
-         "iou_metric_matched_of_example": "02_Model.ipynb",
+         "iou_metric_example": "02_Model.ipynb",
          "iou_metric": "02_Model.ipynb",
+         "PermutedDataset": "02_Model.ipynb",
+         "show_predictions_sorted_by_iou": "02_Model.ipynb",
+         "get_presigned_url_from_aws": "03_Submissions.ipynb",
+         "upload_with_presigned_url": "03_Submissions.ipynb",
+         "submit_model": "03_Submissions.ipynb",
          "SmoothedValue": "09_Utils.ipynb",
          "all_gather": "09_Utils.ipynb",
          "reduce_dict": "09_Utils.ipynb",
@@ -40,6 +45,7 @@ index = {"dataset_url": "01_Datasets.ipynb",
 
 modules = ["datasets.py",
            "instance_segmentation/model.py",
+           "submissions.py",
            "utils.py"]
 
 doc_url = "https://cro-ai-league.github.io/dolphins-recognition-challenge/"
