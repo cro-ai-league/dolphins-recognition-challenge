@@ -10,6 +10,9 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Tutorial
+      url: DolphinsTutorial.html
+    - output: web,pdf
       title: Datasets
       url: Datasets.html
     - output: web,pdf
@@ -21,9 +24,6 @@ entries:
     - output: web,pdf
       title: Utilities
       url: Utils.html
-    - output: web,pdf
-      title: Tutorial
-      url: DolphinsTutorial.html
     output: web
     title: dolphins_recognition_challenge
   output: web
