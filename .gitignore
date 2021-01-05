@@ -143,11 +143,12 @@ checklink/cookies.txt
 .gitconfig
 run_jupyter.sh
 notebooks/submission-iou=*
-notebooks/tutorial/submission-iou=*
+notebooks/00_tutorial/submission-iou=*
 .gitattributes
 
 
 notebooks/saved_models/
 notebooks/tutorial/data/
 data/
+tmp/
 
