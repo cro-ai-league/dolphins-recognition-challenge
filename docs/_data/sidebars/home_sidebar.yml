@@ -24,6 +24,15 @@ entries:
     - output: web,pdf
       title: Utilities
       url: Utils.html
+    - output: web,pdf
+      title: Helpers
+      url: Helpers.html
+    - output: web,pdf
+      title: Convert
+      url: Convert_raw_image_to_jpg.html
+    - output: web,pdf
+      title: Image resize
+      url: Image_resize.html
     output: web
     title: dolphins_recognition_challenge
   output: web

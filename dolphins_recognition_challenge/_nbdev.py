@@ -41,12 +41,36 @@ index = {"dataset_url": "01_Datasets.ipynb",
          "get_rank": "09_Utils.ipynb",
          "is_main_process": "09_Utils.ipynb",
          "save_on_master": "09_Utils.ipynb",
-         "init_distributed_mode": "09_Utils.ipynb"}
+         "init_distributed_mode": "09_Utils.ipynb",
+         "ensure": "97_Helpers.ipynb",
+         "ensure_equal": "97_Helpers.ipynb",
+         "ensure_exists": "97_Helpers.ipynb",
+         "tmp": "97_Helpers.ipynb",
+         "hello_world": "97_Helpers.ipynb",
+         "glob_suffixes": "99_Image_resize.ipynb",
+         "get_suffixes": "98_Convert_raw_image_to_jpg.ipynb",
+         "get_rand_file_with_suff": "98_Convert_raw_image_to_jpg.ipynb",
+         "get_one_image_for_each_suffix": "98_Convert_raw_image_to_jpg.ipynb",
+         "create_sample_test_dir_if_needed": "98_Convert_raw_image_to_jpg.ipynb",
+         "convert_image_to_jpg_darktable": "98_Convert_raw_image_to_jpg.ipynb",
+         "convert_files_with_darktable": "98_Convert_raw_image_to_jpg.ipynb",
+         "display_image": "99_Image_resize.ipynb",
+         "separate_masks": "99_Image_resize.ipynb",
+         "resize_composite_multi": "99_Image_resize.ipynb",
+         "calculate_image_size": "99_Image_resize.ipynb",
+         "file_suffix_in": "99_Image_resize.ipynb",
+         "get_files_from_path": "99_Image_resize.ipynb",
+         "recreate_dst_dir": "99_Image_resize.ipynb",
+         "save_img_lbl_inst": "99_Image_resize.ipynb",
+         "resize_dataset": "99_Image_resize.ipynb"}
 
 modules = ["datasets.py",
            "instance_segmentation/model.py",
            "submissions.py",
-           "utils.py"]
+           "utils.py",
+           "helpers.py",
+           "convert_raw_jpg.py",
+           "image_resize.py"]
 
 doc_url = "https://cro-ai-league.github.io/dolphins-recognition-challenge/"
 
