@@ -25,6 +25,9 @@ entries:
       title: Utilities
       url: Utils.html
     - output: web,pdf
+      title: Leaderboard
+      url: Leaderboard.html
+    - output: web,pdf
       title: Helpers
       url: Helpers.html
     - output: web,pdf

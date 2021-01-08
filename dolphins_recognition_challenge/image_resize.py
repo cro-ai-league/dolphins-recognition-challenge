@@ -34,7 +34,8 @@ def _get_pallete(img_P: Image.Image) -> List[List[int]]:
 
 
 def display_image(img: Union[Image.Image, Iterable[Image.Image]], x_size=240):
-    """Displays an image or multiple images"""
+    """Displays an image or images with smaller dimension equal to x_size,
+    and the other dimension is calculated"""
 
     if isinstance(img, Image.Image):
         y_size = int(img.size[1] / img.size[0] * x_size)
@@ -133,6 +134,7 @@ def file_suffix_in(f: Path, suffixes: List[str]) -> bool:
 
 
 def glob_suffixes(root_path: Path, suffixes: Union[List[str], str]) -> List[Path]:
+    """Returns all suffixes located in the path and in the input variable suffixes"""
     if isinstance(suffixes, str):
         suffixes = [suffixes]
     return sorted([f for f in root_path.glob("**/*") if file_suffix_in(f, suffixes)])
@@ -218,7 +220,7 @@ def resize_dataset(
     verbose: Param("", bool) = True,
 ):
 
-    """Resizes the entire dataset and saves it"""
+    """Resizes the entire dataset (images and labels) and saves it"""
 
     src_images, src_lbl_classes, src_lbl_instances = get_files_from_path(src_path)
 

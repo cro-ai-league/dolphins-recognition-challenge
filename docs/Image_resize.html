@@ -6,8 +6,8 @@ title: Image resize
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Resizing dataset"
-description: "Resizing dataset"
+summary: "Resizing dataset. This functions are not required for competitors but was developed to prepare the dataset for the competition."
+description: "Resizing dataset. This functions are not required for competitors but was developed to prepare the dataset for the competition."
 nb_path: "notebooks/99_Image_resize.ipynb"
 ---
 <!--
@@ -79,7 +79,8 @@ nb_path: "notebooks/99_Image_resize.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="display_image" class="doc_header"><code>display_image</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/image_resize.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>display_image</code>(<strong><code>img</code></strong>:<code>Union</code>[<code>Image</code>, <code>Iterable</code>[<code>Image</code>]], <strong><code>x_size</code></strong>=<em><code>240</code></em>)</p>
 </blockquote>
-<p>Displays an image or multiple images</p>
+<p>Displays an image or images with smaller dimension equal to x_size,
+and the other dimension is calculated</p>
 
 </div>
 
@@ -550,8 +551,9 @@ output shape (1045, 500)
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="glob_suffixes" class="doc_header"><code>glob_suffixes</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/image_resize.py#L135" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>glob_suffixes</code>(<strong><code>root_path</code></strong>:<code>Path</code>, <strong><code>suffixes</code></strong>:<code>Union</code>[<code>List</code>[<code>str</code>], <code>str</code>])</p>
+<h4 id="glob_suffixes" class="doc_header"><code>glob_suffixes</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/image_resize.py#L136" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>glob_suffixes</code>(<strong><code>root_path</code></strong>:<code>Path</code>, <strong><code>suffixes</code></strong>:<code>Union</code>[<code>List</code>[<code>str</code>], <code>str</code>])</p>
 </blockquote>
+<p>Returns all suffixes located in the path and in the input variable suffixes</p>
 
 </div>
 
@@ -671,9 +673,9 @@ output shape (1045, 500)
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="resize_dataset" class="doc_header"><code>resize_dataset</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/image_resize.py#L213" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>resize_dataset</code>(<strong><code>src_path</code></strong>:"input directory containing images and annotations", <strong><code>dst_path</code></strong>:"output directory, will be deleted if not empy", <strong><code>dst_image_size</code></strong>:"min height or width"=<em><code>1000</code></em>, <strong><code>verbose</code></strong>:""=<em><code>True</code></em>)</p>
+<h4 id="resize_dataset" class="doc_header"><code>resize_dataset</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/image_resize.py#L215" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>resize_dataset</code>(<strong><code>src_path</code></strong>:"input directory containing images and annotations", <strong><code>dst_path</code></strong>:"output directory, will be deleted if not empy", <strong><code>dst_image_size</code></strong>:"min height or width"=<em><code>1000</code></em>, <strong><code>verbose</code></strong>:""=<em><code>True</code></em>)</p>
 </blockquote>
-<p>Resizes the entire dataset and saves it</p>
+<p>Resizes the entire dataset (images and labels) and saves it</p>
 
 </div>
 
