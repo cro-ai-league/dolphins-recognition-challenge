@@ -82,7 +82,7 @@ def evaluate_private_leaderboard(private_leaderboard_path=private_leaderboard_pa
 
     n = new_entries.shape[0]
     for i, ix in enumerate(new_entries.index):
-        row = new_entries.loc[i]
+        row = new_entries.loc[ix]
         file_name, alias, dt = row["file_name"], row["alias"], row["date"]
         print(f"Evaluating model {i+1}/{n} for {alias} submitted at {dt}...")
         calculated_iou = evaluate_model(f"models_for_evaluation/{file_name}")
@@ -106,4 +106,5 @@ def save_public_leaderboard(private_leaderboard_path=private_leaderboard_path, p
 def get_leaderboard(public_leaderboard_path=public_leaderboard_path):
     public_leaderboard = pd.read_csv(public_leaderboard_path)
     public_leaderboard = public_leaderboard[(public_leaderboard.alias != "dolphin123") & (public_leaderboard.alias != "malimedo")]
+    public_leaderboard = public_leaderboard.sort_values(by=["calculated_iou"], ascending=False)
     return public_leaderboard

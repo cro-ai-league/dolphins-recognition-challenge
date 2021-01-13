@@ -79,8 +79,10 @@ nb_path: "notebooks/96_Leaderboard.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Downloading 1/2 from S3...
-Downloading 2/2 from S3...
+<pre>Downloading 1/4 from S3...
+Downloading 2/4 from S3...
+Downloading 3/4 from S3...
+Downloading 4/4 from S3...
 </pre>
 </div>
 </div>
@@ -107,23 +109,40 @@ Downloading 2/2 from S3...
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>submitted_iou</th>
-      <th>date</th>
       <th>alias</th>
+      <th>date</th>
+      <th>submitted_iou</th>
+      <th>calculated_iou</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.44003</td>
-      <td>2021-01-05 15:01:23.563795</td>
       <td>dolphin123</td>
+      <td>2021-01-05 15:01:23.563795</td>
+      <td>0.44003</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.43686</td>
-      <td>2021-01-09 12:00:15.363378</td>
       <td>dolphin123</td>
+      <td>2021-01-09 12:00:15.363378</td>
+      <td>0.43686</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>dolphin123</td>
+      <td>2021-01-13 14:27:38.005281</td>
+      <td>0.44925</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>prvi_pokušaj</td>
+      <td>2021-01-13 14:29:59.372504</td>
+      <td>0.44925</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -219,13 +238,27 @@ Downloading 2/2 from S3...
       <td>dolphin123</td>
       <td>2021-01-05 15:01:23.563795</td>
       <td>0.44003</td>
-      <td>NaN</td>
+      <td>0.440028</td>
     </tr>
     <tr>
       <th>1</th>
       <td>dolphin123</td>
       <td>2021-01-09 12:00:15.363378</td>
       <td>0.43686</td>
+      <td>0.436864</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>dolphin123</td>
+      <td>2021-01-13 14:27:38.005281</td>
+      <td>0.44925</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>prvi_pokušaj</td>
+      <td>2021-01-13 14:29:59.372504</td>
+      <td>0.44925</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -285,21 +318,6 @@ Downloading 2/2 from S3...
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 12.2 s, sys: 0 ns, total: 12.2 s
-Wall time: 8.29 s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -323,8 +341,8 @@ Wall time: 8.29 s
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Evaluating model 1/2 for dolphin123 submitted at 2021-01-05 15:01:23.563795...
-Evaluating model 2/2 for dolphin123 submitted at 2021-01-09 12:00:15.363378...
+<pre>Evaluating model 1/2 for dolphin123 submitted at 2021-01-13 14:27:38.005281...
+Evaluating model 2/2 for prvi_pokušaj submitted at 2021-01-13 14:29:59.372504...
 </pre>
 </div>
 </div>
@@ -371,6 +389,20 @@ Evaluating model 2/2 for dolphin123 submitted at 2021-01-09 12:00:15.363378...
       <td>2021-01-09 12:00:15.363378</td>
       <td>0.43686</td>
       <td>0.436864</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>dolphin123</td>
+      <td>2021-01-13 14:27:38.005281</td>
+      <td>0.44925</td>
+      <td>0.449246</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>prvi_pokušaj</td>
+      <td>2021-01-13 14:29:59.372504</td>
+      <td>0.44925</td>
+      <td>0.449246</td>
     </tr>
   </tbody>
 </table>
@@ -444,6 +476,20 @@ Evaluating model 2/2 for dolphin123 submitted at 2021-01-09 12:00:15.363378...
       <td>2021-01-09 12:00:15.363378</td>
       <td>0.43686</td>
       <td>0.436864</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>dolphin123</td>
+      <td>2021-01-13 14:27:38.005281</td>
+      <td>0.44925</td>
+      <td>0.449246</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>prvi_pokušaj</td>
+      <td>2021-01-13 14:29:59.372504</td>
+      <td>0.44925</td>
+      <td>0.449246</td>
     </tr>
   </tbody>
 </table>
@@ -535,6 +581,13 @@ Evaluating model 2/2 for dolphin123 submitted at 2021-01-09 12:00:15.363378...
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <th>3</th>
+      <td>prvi_pokušaj</td>
+      <td>2021-01-13 14:29:59.372504</td>
+      <td>0.44925</td>
+      <td>0.449246</td>
+    </tr>
   </tbody>
 </table>
 </div>

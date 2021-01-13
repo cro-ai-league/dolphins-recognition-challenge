@@ -35,24 +35,18 @@ The leaderboard will be periodically updated to reflect new sumbissions.
     <tr style="text-align: right;">
       <th></th>
       <th>alias</th>
-      <th>score</th>
+      <th>date</th>
+      <th>submitted_iou</th>
+      <th>calculated_iou</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>leptirić</td>
-      <td>0.526</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>davor</td>
-      <td>0.483</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>matija</td>
-      <td>0.453</td>
+      <th>3</th>
+      <td>prvi_pokušaj</td>
+      <td>2021-01-13 14:29:59.372504</td>
+      <td>0.44925</td>
+      <td>0.449246</td>
     </tr>
   </tbody>
 </table>
