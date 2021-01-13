@@ -32,17 +32,102 @@ nb_path: "notebooks/96_Leaderboard.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actual</span> <span class="o">=</span> <span class="n">parse_filename</span><span class="p">(</span>
+    <span class="s2">&quot;uploaded-2020-12-22T15:35:15.513570-submission-iou=0.46613-dolphin123-name.surname@gmail.com-2020-12-22T15:35:04.875962.zip&quot;</span>
+<span class="p">)</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;file_name&quot;</span><span class="p">:</span> <span class="s2">&quot;uploaded-2020-12-22T15:35:15.513570-submission-iou=0.46613-dolphin123-name.surname@gmail.com-2020-12-22T15:35:04.875962.zip&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">&quot;2020-12-22 15:35:15.513570&quot;</span><span class="p">),</span>
+    <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;dolphin123&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;name.surname@gmail.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;submitted_iou&quot;</span><span class="p">:</span> <span class="s2">&quot;0.46613&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calculated_iou&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">assert</span> <span class="n">actual</span> <span class="o">==</span> <span class="n">expected</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_entries</span> <span class="o">=</span> <span class="n">get_submissions_from_s3</span><span class="p">()</span>
+<span class="n">public</span><span class="p">(</span><span class="n">new_entries</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 <div class="output_wrapper">
 <div class="output">
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Downloading 1/2 from S3...
+Downloading 2/2 from S3...
+</pre>
+</div>
+</div>
 
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_leaderboard" class="doc_header"><code>get_leaderboard</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/leaderboard.py#L11" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_leaderboard</code>()</p>
-</blockquote>
+<div class="output_area">
 
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>submitted_iou</th>
+      <th>date</th>
+      <th>alias</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.44003</td>
+      <td>2021-01-05 15:01:23.563795</td>
+      <td>dolphin123</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.43686</td>
+      <td>2021-01-09 12:00:15.363378</td>
+      <td>dolphin123</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -56,6 +141,28 @@ nb_path: "notebooks/96_Leaderboard.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">merge_with_private_leaderboard</span><span class="p">(</span><span class="n">new_entries</span><span class="p">,</span> <span class="n">private_leaderboard_path</span><span class="o">=</span><span class="n">private_leaderboard_path</span><span class="p">):</span>
+    <span class="c1"># merge private leaderboard and new_entries if needed</span>
+    <span class="n">new_entries</span><span class="p">[</span><span class="s2">&quot;calculated_iou&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">if</span> <span class="n">private_leaderboard_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">private_leaderboard</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">private_leaderboard_path</span><span class="p">)</span>
+        <span class="n">private_leaderboard</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">private_leaderboard</span><span class="p">,</span> <span class="n">new_entries</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">private_leaderboard</span> <span class="o">=</span> <span class="n">private_leaderboard</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">private_leaderboard</span> <span class="o">=</span> <span class="n">new_entries</span>
+    
+    <span class="n">private_leaderboard</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">private_leaderboard_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">private_leaderboard</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -63,6 +170,17 @@ nb_path: "notebooks/96_Leaderboard.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">private_leaderboard</span> <span class="o">=</span> <span class="n">merge_with_private_leaderboard</span><span class="p">(</span><span class="n">new_entries</span><span class="p">)</span>
+<span class="n">public</span><span class="p">(</span><span class="n">private_leaderboard</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -90,25 +208,333 @@ nb_path: "notebooks/96_Leaderboard.ipynb"
     <tr style="text-align: right;">
       <th></th>
       <th>alias</th>
-      <th>score</th>
+      <th>date</th>
+      <th>submitted_iou</th>
+      <th>calculated_iou</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>leptirić</td>
-      <td>0.526</td>
+      <td>dolphin123</td>
+      <td>2021-01-05 15:01:23.563795</td>
+      <td>0.44003</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>davor</td>
-      <td>0.483</td>
+      <td>dolphin123</td>
+      <td>2021-01-09 12:00:15.363378</td>
+      <td>0.43686</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="c1"># do it</span>
+    <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
+            <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+            <span class="n">unzipped_path</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">Path</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;submiss*&quot;</span><span class="p">)][</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">unzipped_path</span> <span class="o">/</span> <span class="s2">&quot;model.pt&quot;</span><span class="p">)</span>
+        <span class="n">data_loader</span><span class="p">,</span> <span class="n">data_loader_test</span> <span class="o">=</span> <span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;segmentation&quot;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">iou</span><span class="p">,</span> <span class="n">iou_df</span> <span class="o">=</span> <span class="n">iou_metric</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data_loader_test</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">iou</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actual</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;models_for_evaluation/uploaded-2021-01-05T15:01:23.563795-submission-iou=0.44003-dolphin123-name.surname@gmail.com-2021-01-05T15:01:21.655750.zip&#39;</span><span class="p">))</span>
+<span class="n">expected</span> <span class="o">=</span> <span class="mf">0.44003</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 12.2 s, sys: 0 ns, total: 12.2 s
+Wall time: 8.29 s
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">public</span><span class="p">(</span><span class="n">evaluate_private_leaderboard</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Evaluating model 1/2 for dolphin123 submitted at 2021-01-05 15:01:23.563795...
+Evaluating model 2/2 for dolphin123 submitted at 2021-01-09 12:00:15.363378...
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>alias</th>
+      <th>date</th>
+      <th>submitted_iou</th>
+      <th>calculated_iou</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>dolphin123</td>
+      <td>2021-01-05 15:01:23.563795</td>
+      <td>0.44003</td>
+      <td>0.440028</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>matija</td>
-      <td>0.453</td>
+      <th>1</th>
+      <td>dolphin123</td>
+      <td>2021-01-09 12:00:15.363378</td>
+      <td>0.43686</td>
+      <td>0.436864</td>
     </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save_public_leaderboard</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>alias</th>
+      <th>date</th>
+      <th>submitted_iou</th>
+      <th>calculated_iou</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>dolphin123</td>
+      <td>2021-01-05 15:01:23.563795</td>
+      <td>0.44003</td>
+      <td>0.440028</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>dolphin123</td>
+      <td>2021-01-09 12:00:15.363378</td>
+      <td>0.43686</td>
+      <td>0.436864</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_leaderboard" class="doc_header"><code>get_leaderboard</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/leaderboard.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_leaderboard</code>(<strong><code>public_leaderboard_path</code></strong>=<em><code>Path('leaderboard.csv')</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_leaderboard</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>alias</th>
+      <th>date</th>
+      <th>submitted_iou</th>
+      <th>calculated_iou</th>
+    </tr>
+  </thead>
+  <tbody>
   </tbody>
 </table>
 </div>
