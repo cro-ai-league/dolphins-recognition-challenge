@@ -58,14 +58,19 @@ def get_submissions_from_s3(private_leaderboard_path=private_leaderboard_path):
         s3_object
         for s3_object in my_bucket.objects.all()
         if Path(s3_object.key).match("*submission*.zip")
-        and Path(s3_object.key).name not in private_leaderboard["file_name"]
+        and Path(s3_object.key).name not in list(private_leaderboard["file_name"])
     ]
-    for i, s3_object in enumerate(s3_objects):
-        print(f"Downloading {i+1}/{len(s3_objects)} from S3...")
-        my_bucket.download_file(s3_object.key, f"models_for_evaluation/{Path(s3_object.key).name}")
+    if len(s3_objects) > 0:
+        for i, s3_object in enumerate(s3_objects):
+            print(f"Downloading {i+1}/{len(s3_objects)} from S3...")
+            my_bucket.download_file(s3_object.key, f"models_for_evaluation/{Path(s3_object.key).name}")
 
-    # return new entries
-    new_entries = pd.Series([Path(s3_object.key).name for s3_object in s3_objects]).apply(parse_filename).apply(pd.Series)
+        # return new entries
+        new_entries = pd.Series([Path(s3_object.key).name for s3_object in s3_objects]).apply(parse_filename).apply(pd.Series)
+    else:
+        x = "uploaded-2020-12-22T15:35:15.513570-submission-iou=0.46613-dolphin123-name.surname@gmail.com-2020-12-22T15:35:04.875962.zip"
+        new_entries = pd.Series([x]).apply(parse_filename).apply(pd.Series).iloc[:0, :]
+
     return new_entries
 
 
@@ -98,13 +103,12 @@ def save_public_leaderboard(private_leaderboard_path=private_leaderboard_path, p
     public_leaderboard = public(private_leaderboard)
     public_leaderboard.to_csv(public_leaderboard_path, index=False)
 
-    return public_leaderboard
-
 # Cell
 
 
 def get_leaderboard(public_leaderboard_path=public_leaderboard_path):
     public_leaderboard = pd.read_csv(public_leaderboard_path)
     public_leaderboard = public_leaderboard[(public_leaderboard.alias != "dolphin123") & (public_leaderboard.alias != "malimedo")]
-    public_leaderboard = public_leaderboard.sort_values(by=["calculated_iou"], ascending=False)
+    public_leaderboard = public_leaderboard.sort_values(by=["calculated_iou"], ascending=False).reset_index(drop=True)
+    public_leaderboard.index = public_leaderboard.index + 1
     return public_leaderboard

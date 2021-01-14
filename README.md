@@ -2,7 +2,7 @@
 > The challenge has two parts:
 
 
-!["Croatian AI League"](notebooks/images/AILeague_logo-800x452.png)
+!["Croatian AI League"](https://raw.githubusercontent.com/cro-ai-league/dolphins-recognition-challenge/master/docs/images/AILeague_logo-800x452.png)
 
 ## Tutorial
 
@@ -13,45 +13,9 @@ The easiest way to start and sbmit your solution is to open the following tutori
 The leaderboard will be periodically updated to reflect new sumbissions.
 > Notice:The leaderboard is generated using validtion set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>alias</th>
-      <th>date</th>
-      <th>submitted_iou</th>
-      <th>calculated_iou</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3</th>
-      <td>prvi_pokušaj</td>
-      <td>2021-01-13 14:29:59.372504</td>
-      <td>0.44925</td>
-      <td>0.449246</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+        alias         date                          submitted_iou    calculated_iou
+    --  ------------  --------------------------  ---------------  ----------------
+     1  prvi_pokušaj  2021-01-13 14:29:59.372504          0.44925          0.449246
 
 
 ## Local install
