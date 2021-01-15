@@ -81,6 +81,39 @@ def public(private_leaderboard):
 
 # Internal Cell
 
+def merge_with_private_leaderboard(
+    new_entries, private_leaderboard_path=private_leaderboard_path
+):
+    # merge private leaderboard and new_entries if needed
+    new_entries["calculated_iou"] = np.nan
+    if private_leaderboard_path.exists():
+        private_leaderboard = pd.read_csv(private_leaderboard_path)
+        private_leaderboard = pd.concat([private_leaderboard, new_entries], axis=0)
+        private_leaderboard = private_leaderboard.drop_duplicates(subset="file_name")
+    else:
+        private_leaderboard = new_entries
+
+    private_leaderboard.to_csv(private_leaderboard_path, index=False)
+
+    return private_leaderboard
+
+# Internal Cell
+
+def evaluate_model(model_path) -> float:
+    # do it
+    with tempfile.TemporaryDirectory() as d:
+        with zipfile.ZipFile(model_path, "r") as zip_ref:
+            zip_ref.extractall(path=d)
+            unzipped_path = [x for x in Path(d).glob("submiss*")][0]
+
+        model = torch.load(unzipped_path / "model.pt")
+        data_loader, data_loader_test = get_dataset("segmentation", batch_size=4)
+        iou, iou_df = iou_metric(model, data_loader_test.dataset)
+
+    return iou
+
+# Internal Cell
+
 def evaluate_private_leaderboard(private_leaderboard_path=private_leaderboard_path):
     private_leaderboard = pd.read_csv(private_leaderboard_path)
     new_entries = private_leaderboard.loc[private_leaderboard["calculated_iou"].isna()]

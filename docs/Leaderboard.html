@@ -26,21 +26,6 @@ nb_path: "notebooks/96_Leaderboard.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.6/dist-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-  return torch._C._cuda_getDeviceCount() &gt; 0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -51,211 +36,8 @@ nb_path: "notebooks/96_Leaderboard.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_entries</span> <span class="o">=</span> <span class="n">get_submissions_from_s3</span><span class="p">()</span>
-<span class="n">public</span><span class="p">(</span><span class="n">new_entries</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Downloading 1/1 from S3...
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>alias</th>
-      <th>date</th>
-      <th>submitted_iou</th>
-      <th>calculated_iou</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>dolphin123</td>
-      <td>2021-01-13 14:27:38.005281</td>
-      <td>0.44925</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">private_leaderboard</span> <span class="o">=</span> <span class="n">merge_with_private_leaderboard</span><span class="p">(</span><span class="n">new_entries</span><span class="p">)</span>
-<span class="n">public</span><span class="p">(</span><span class="n">private_leaderboard</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>alias</th>
-      <th>date</th>
-      <th>submitted_iou</th>
-      <th>calculated_iou</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>dolphin123</td>
-      <td>2021-01-05 15:01:23.563795</td>
-      <td>0.44003</td>
-      <td>0.440028</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>prvi_pokušaj</td>
-      <td>2021-01-13 14:29:59.372504</td>
-      <td>0.44925</td>
-      <td>0.449246</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>dolphin123</td>
-      <td>2021-01-09 12:00:15.363378</td>
-      <td>0.43686</td>
-      <td>0.436864</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>dolphin123</td>
-      <td>2021-01-13 14:27:38.005281</td>
-      <td>0.44925</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actual</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span>
-    <span class="n">Path</span><span class="p">(</span>
-        <span class="s2">&quot;models_for_evaluation/uploaded-2021-01-05T15:01:23.563795-submission-iou=0.44003-dolphin123-name.surname@gmail.com-2021-01-05T15:01:21.655750.zip&quot;</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-<span class="n">expected</span> <span class="o">=</span> <span class="mf">0.44003</span>
-<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">expected</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">private_leaderboard</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;private_leaderboard.csv&quot;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">private_leaderboard</span><span class="p">[</span><span class="s2">&quot;calculated_iou&quot;</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save_public_leaderboard</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ignore this</span>
+<span class="n">in_test</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 
     </div>
@@ -276,7 +58,7 @@ nb_path: "notebooks/96_Leaderboard.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_leaderboard" class="doc_header"><code>get_leaderboard</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/leaderboard.py#L109" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_leaderboard</code>(<strong><code>public_leaderboard_path</code></strong>=<em><code>Path('leaderboard.csv')</code></em>)</p>
+<h4 id="get_leaderboard" class="doc_header"><code>get_leaderboard</code><a href="https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/dolphins_recognition_challenge/leaderboard.py#L142" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_leaderboard</code>(<strong><code>public_leaderboard_path</code></strong>=<em><code>Path('leaderboard.csv')</code></em>)</p>
 </blockquote>
 
 </div>
@@ -296,19 +78,16 @@ nb_path: "notebooks/96_Leaderboard.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a temporary leaderboard calculated daily using validation data. The final leaderboard will be calculated using test dataset unavailable to participants and will most likely be different than the one provided here due to overfitting on the validation dataset. Please see the following link for the details: <a href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_sets">https://en.wikipedia.org/wiki/Training,_validation,_and_test_sets</a></p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_leaderboard</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
