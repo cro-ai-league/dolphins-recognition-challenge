@@ -152,4 +152,5 @@ notebooks/tutorial/data/
 data/
 tmp/
 docs/.bundle
-
+notebooks/models_for_evaluation/
+notebooks/private_leaderboard.csv

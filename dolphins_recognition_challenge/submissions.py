@@ -60,6 +60,12 @@ def submit_model(model, *, alias: str, name: str, email: str) -> None:
     The leaderbord will be updated every few days because it requires all submitted models to be veried and tested independantly.
     """
 
+    if alias == "dupin123":
+        raise ValueError("Please change default alias to your own")
+
+    if email == "name.surname@gmail.com":
+        raise ValueError("Please change default email to your own")
+
     # evaluate model and save metrics
     _, data_loader_test = get_dataset("segmentation", batch_size=4)
     iou, iou_df = iou_metric(model, data_loader_test.dataset)
