@@ -6,8 +6,8 @@ title: Convert
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Converts raw to jpg"
-description: "Converts raw to jpg"
+summary: "Converts raw to jpg. This functions are not required for competitors but was developed to prepare the dataset for the competition."
+description: "Converts raw to jpg. This functions are not required for competitors but was developed to prepare the dataset for the competition."
 nb_path: "notebooks/98_Convert_raw_image_to_jpg.ipynb"
 ---
 <!--
@@ -81,6 +81,166 @@ nb_path: "notebooks/98_Convert_raw_image_to_jpg.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actual</span> <span class="o">=</span> <span class="n">get_suffixes</span><span class="p">(</span><span class="n">dropbox_path</span><span class="p">)</span>
+
+<span class="n">expected</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;.xmp&quot;</span><span class="p">,</span> <span class="s2">&quot;.tif&quot;</span><span class="p">,</span> <span class="s2">&quot;.cr2&quot;</span><span class="p">,</span> <span class="s2">&quot;.mov&quot;</span><span class="p">,</span> <span class="s2">&quot;.info&quot;</span><span class="p">])</span>
+
+<span class="k">assert</span> <span class="n">actual</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">actual</span><span class="si">}</span><span class="s2"> != </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;.tif&#39;, &#39;.info&#39;, &#39;.xmp&#39;, &#39;.jpg&#39;, &#39;.mov&#39;, &#39;.cr2&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actual</span> <span class="o">=</span> <span class="n">get_rand_file_with_suff</span><span class="p">(</span><span class="n">dropbox_path</span><span class="p">,</span> <span class="s2">&quot;.JpG&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">actual</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">Path</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">actual</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">actual</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">actual</span><span class="o">.</span><span class="n">suffix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;.jpg&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>Path(&#39;/tf/airt/data/testing/raw/070728_10_1_0012.JPG&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">get_one_image_for_each_suffix</span><span class="p">(</span><span class="n">dropbox_path</span><span class="p">))</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">get_suffixes</span><span class="p">(</span><span class="n">dropbox_path</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span>
+    <span class="n">get_one_image_for_each_suffix</span><span class="p">(</span><span class="n">dropbox_path</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>[Path(&#39;/tf/airt/data/testing/raw/Grga_18062007_1_1_001-1.tif&#39;),
+ Path(&#39;/tf/airt/data/testing/raw/ZbThumbnail.info&#39;),
+ Path(&#39;/tf/airt/data/testing/raw/070828_20_1_0040.JPG.xmp&#39;),
+ Path(&#39;/tf/airt/data/testing/raw/070728_10_1_0012.JPG&#39;),
+ Path(&#39;/tf/airt/data/testing/raw/MVI_3536.MOV&#39;),
+ Path(&#39;/tf/airt/data/testing/raw/140830_47_1_1113.CR2&#39;)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">expected_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../../data/testing/raw&quot;</span><span class="p">)</span>
+<span class="n">actual</span> <span class="o">=</span> <span class="n">create_sample_test_dir_if_needed</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">expected_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">actual</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="n">actual</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[Path(&#39;../../data/testing/raw/070828_20_1_0040.JPG.xmp&#39;),
+ Path(&#39;../../data/testing/raw/ZbThumbnail.info&#39;),
+ Path(&#39;../../data/testing/raw/Grga_18062007_1_1_001-1.jpg&#39;),
+ Path(&#39;../../data/testing/raw/070728_9_1_0012.JPG&#39;),
+ Path(&#39;../../data/testing/raw/140830_47_1_1113.CR2&#39;),
+ Path(&#39;../../data/testing/raw/Grga_18062007_1_1_001-1.tif&#39;),
+ Path(&#39;../../data/testing/raw/070728_10_1_0012.JPG&#39;),
+ Path(&#39;../../data/testing/raw/MVI_3536.MOV&#39;),
+ Path(&#39;../../data/testing/raw/.ipynb_checkpoints&#39;)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}

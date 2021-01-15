@@ -2,11 +2,21 @@
 > The challenge has two parts:
 
 
-!["Croatian AI League"](notebooks/images/AILeague_logo-800x452.png)
+!["Croatian AI League"](https://raw.githubusercontent.com/cro-ai-league/dolphins-recognition-challenge/master/docs/images/AILeague_logo-800x452.png)
 
 ## Tutorial
 
 The easiest way to start and sbmit your solution is to open the following tutorial on Colaboratory from Google: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb)
+
+## Leaderboard
+
+The leaderboard will be periodically updated to reflect new sumbissions.
+> Notice:The leaderboard is generated using validtion set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.
+
+        alias         date                          submitted_iou    calculated_iou
+    --  ------------  --------------------------  ---------------  ----------------
+     1  prvi_pokušaj  2021-01-13 14:29:59.372504          0.44925          0.449246
+
 
 ## Local install
 
