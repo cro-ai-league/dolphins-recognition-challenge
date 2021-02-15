@@ -10,8 +10,11 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Tutorial
-      url: DolphinsTutorial.html
+      title: Rules
+      url: Rules.html
+    - output: web,pdf
+      title: Privacy notice
+      url: Privacy_notice.html
     - output: web,pdf
       title: Datasets
       url: Datasets.html
