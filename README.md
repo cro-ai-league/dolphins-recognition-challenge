@@ -34,7 +34,7 @@ You can also work on your own personal computer or cloud by installing a PIP pac
 
 The dataset is prepared for use with PyTorch, although it is easy to prepare it for other frameworks. To use it with PyTorch, install the PIP package above and import it as follows:
 
-```python
+```
 from dolphins_recognition_challenge.datasets import get_dataset
 
 train_ds, val_ds = get_dataset("segmentation")
@@ -69,7 +69,7 @@ type(train_ds)
 [The Blue World Institute of Marine Research and Conservation](https://www.blue-world.org/) works to protect the marine environment in the Adriatic Sea. To that purpose, the Blue World Institute operates three programmes – research, education, and conservation. Our research focuses mainly on large marine vertebrates (dolphins and whales, sea turtles, sharks and giant devil rays) informing our education activities and conservation projects. We work from the Adriatic islands of Lošinj, Murter and Vis, with the local communities, and collaborate nationally, regionally and internationally to advance sustainable marine management and environmental sustainability in the Mediterranean Basin.
 
 
-## Sponsorss
+## Sponsors
       
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/01_Infobip_logo_horizontal_rgb_color.png" alt="Infobip" width="150" style="max-width: 150px">
   
