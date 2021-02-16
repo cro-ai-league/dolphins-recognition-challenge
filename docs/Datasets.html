@@ -318,7 +318,7 @@ nb_path: "notebooks/01_Datasets.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In order to prevent overfitting which happens when the dataset size is too small, we perform a number of transformations to increase the size of the dataset. One transofrmation implemented in the Torch vision library is <a href="/dolphins-recognition-challenge/Datasets.html#RandomHorizontalFlip"><code>RandomHorizontalFlip</code></a> and we will implemented <code>MyColorJitter</code> which is basically just a wrapper around <code>torchvision.transforms.ColorJitter</code> class. However, we cannot use this class directly without a wrapper because a transofrmation could possibly affect targets and not just the image. For example, if we were to implement RandomCrop, we would need to crop segmentation masks and readjust bounding boxes as well.</p>
+<p>In order to prevent overfitting which happens when the dataset size is too small, we perform a number of transformations to increase the size of the dataset. One transofrmation implemented in the Torch vision library is <a href="/Datasets.html#RandomHorizontalFlip"><code>RandomHorizontalFlip</code></a> and we will implemented <code>MyColorJitter</code> which is basically just a wrapper around <code>torchvision.transforms.ColorJitter</code> class. However, we cannot use this class directly without a wrapper because a transofrmation could possibly affect targets and not just the image. For example, if we were to implement RandomCrop, we would need to crop segmentation masks and readjust bounding boxes as well.</p>
 
 </div>
 </div>
@@ -407,7 +407,7 @@ nb_path: "notebooks/01_Datasets.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is an example on how to construct <code>get_tensor_transforms</code> needed to construct a <code>data_loader</code> object using <a href="/dolphins-recognition-challenge/Datasets.html#get_dataset"><code>get_dataset</code></a> function:</p>
+<p>This is an example on how to construct <code>get_tensor_transforms</code> needed to construct a <code>data_loader</code> object using <a href="/Datasets.html#get_dataset"><code>get_dataset</code></a> function:</p>
 
 </div>
 </div>

@@ -1,7 +1,7 @@
-repository: davorrunje/dolphins_recognition_challenge
+repository: cro-ai-league/dolphins-recognition-challenge
 output: web
-topnav_title: dolphins-recognition-challenge
-site_title: dolphins-recognition-challenge
+topnav_title: Croatian AI league
+site_title: Croatian AI league
 company_name: CISEx
 description: The first challange of Croatian AI league - dolphins recognition
 # Set to false to disable KaTeX math
@@ -60,4 +60,4 @@ sidebars:
 - home_sidebar
 
 theme: jekyll-theme-cayman
-baseurl: /dolphins-recognition-challenge/
+baseurl: /
