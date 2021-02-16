@@ -10,11 +10,11 @@ The challenge has two parts:
 - instance segmentation of dolphins in the photo (February 18th - April 12th 2021), and
 - recognition of an individual dolphin from the photo (April 13th - June 15th 2021). 
 
-## Rules & privacy notice
+## Legal
 
-- Official rules can be found at the following  [link](Rules.html).
+- Official rules (in Croatian) can be found at the following  [link](Rules.html).
 
-- Privacy notice can be found at the following  [link](Privacy_notice.html).
+- Privacy notice (in Croatian) can be found at the following  [link](Privacy_notice.html).
 
 
 
@@ -27,7 +27,7 @@ The easiest way to start and submit your solution is to open the following tutor
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/medal-2.jpeg" alt="medal">
 
 The leaderboard will be periodically updated to reflect new sumbissions.
-> Notice:The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.
+{% include note.html content='The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.' %}
 
         alias         date                          submitted_iou    calculated_iou
     --  ------------  --------------------------  ---------------  ----------------
@@ -36,7 +36,7 @@ The leaderboard will be periodically updated to reflect new sumbissions.
 
 ## Local install
 
-You can also work on your own personal computer or cloud by installing a PIP package and downloading the data directly using the following command:
+You can also work on your own personal computer or cloud by installing our [pip package](https://pypi.org/project/dolphins-recognition-challenge/) and downloading the data directly using the following command:
 
 `pip install dolphins-recognition-challenge`
 
@@ -58,6 +58,12 @@ type(train_ds)
     torch.utils.data.dataloader.DataLoader
 
 
+
+The easiest way is to start is by downloading the same [tutorial](https://github.com/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb) Jupyter notebook mentioned above.
+
+## Discussions
+
+[Discussions](https://github.com/cro-ai-league/dolphins-recognition-challenge/discussions) are hosted on Github, together with the complete source code of the challenge. There you can ask questions and discuss any matter you like.
 
 ## Organizers
 
