@@ -28,9 +28,8 @@ test:
 	nbdev_test_nbs --timing True --pause 2 --n_workers 1
 
 release: pypi
-	nbdev_conda_package
-    
-#	nbdev_bump_version
+#	nbdev_conda_package    
+	nbdev_bump_version
 
 pypi: dist
 	twine upload --repository pypi dist/*

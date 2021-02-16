@@ -9,13 +9,16 @@ entries:
     - output: web,pdf
       title: Overview
       url: /
-    - output: web,pdf
-      title: Rules
-      url: Rules.html
-    - output: web,pdf
-      title: Privacy notice
-      url: Privacy_notice.html
       subfolders:
+      - output: web
+        subfolderitems:
+        - output: web,pdf
+          title: Rules
+          url: Rules.html
+        - output: web,pdf
+          title: Privacy notice
+          url: Privacy_notice.html
+        title: Legal
       - output: web
         subfolderitems:
         - output: web,pdf
