@@ -7,8 +7,16 @@
 ## Intro
 
 The challenge has two parts:
-- instance segmentation of dolphins in the photo, and
-- recognition of an individual dolphin from the photo. 
+- instance segmentation of dolphins in the photo (February 18th - April 12th 2021), and
+- recognition of an individual dolphin from the photo (April 13th - June 15th 2021). 
+
+## Rules & privacy notice
+
+- Official rules can be found at the following  [link](Rules.html).
+
+- Privacy notice can be found at the following  [link](Privacy_notice.html).
+
+
 
 ## Tutorial
 
@@ -34,7 +42,7 @@ You can also work on your own personal computer or cloud by installing a PIP pac
 
 The dataset is prepared for use with PyTorch, although it is easy to prepare it for other frameworks. To use it with PyTorch, install the PIP package above and import it as follows:
 
-```
+```python
 from dolphins_recognition_challenge.datasets import get_dataset
 
 train_ds, val_ds = get_dataset("segmentation")
@@ -46,14 +54,6 @@ type(train_ds)
 
 
     torch.utils.data.dataloader.DataLoader
-
-
-
-## Rules & privacy notice
-
-- Official rules can be found at the following  [link](https://cro-ai-league.github.io/dolphins-recognition-challenge/Rules.html).
-
-- Privacy notice can be found at the following  [link](https://cro-ai-league.github.io/dolphins-recognition-challenge/Privacy_notice.html).
 
 
 
@@ -73,7 +73,7 @@ type(train_ds)
       
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/01_Infobip_logo_horizontal_rgb_color.png" alt="Infobip" width="150" style="max-width: 150px">
   
-[Infobip](https://www.infobip.com/) is a global cloud communications platform that enables businesses to build connected customer experiences across all stages of the customer journey at scale, with easy and contextualized interactions over customers’ preferred channels. Accessed through a single platform, Infobip’s omnichannel engagement, identity, user authentication security and contact center solutions help clients and partners overcome the complexity of consumer communications, grow their business and increase loyalty– all in a fast, secure and reliable way. With over a decade of industry experience, Infobip has expanded to include 68+ offices on six continents offering natively built technology with the capacity to reach over seven billion mobile devices and ‘things’ in 190+ countries connected directly to over 600 telecom networks. The company serves and partners with leading mobile operators, messaging apps, banks, social networks, tech companies, and aggregators.
+[Infobip](https://www.infobip.com/) is a global cloud communications platform that enables businesses to build connected experiences across all stages of the customer journey. Accessed through a single platform, Infobip’s omnichannel engagement, identity, security and contact center solutions help clients and partners overcome the complexity of consumer communications, grow their business and increase loyalty. With over a decade of industry experience, Infobip has expanded to include 65+ offices on six continents offering natively built technology with the capacity to reach over seven billion mobile devices and ‘things’ in 190+ countries connected directly to over 650 telecom networks.
 
 
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/Photomath-logo-RGB.png" alt="Photomath" width="225" style="max-width: 225px">
