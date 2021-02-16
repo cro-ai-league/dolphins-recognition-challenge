@@ -12,9 +12,9 @@ The challenge has two parts:
 
 ## Legal
 
-- Official rules (in Croatian) can be found at the following  [link](Rules.html).
+- Official rules (in Croatian) can be found at the following  [link](https://cro-ai-league.cisex.org/Rules.html).
 
-- Privacy notice (in Croatian) can be found at the following  [link](Privacy_notice.html).
+- Privacy notice (in Croatian) can be found at the following  [link](https://cro-ai-league.cisex.org/Privacy_notice.html).
 
 
 
@@ -28,11 +28,6 @@ The easiest way to start and submit your solution is to open the following tutor
 
 The leaderboard will be periodically updated to reflect new sumbissions.
 {% include note.html content='The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.' %}
-
-        alias         date                          submitted_iou    calculated_iou
-    --  ------------  --------------------------  ---------------  ----------------
-     1  prvi_pokušaj  2021-01-13 14:29:59.372504          0.44925          0.449246
-
 
 ## Local install
 
@@ -48,16 +43,7 @@ The dataset is prepared for use with PyTorch, although it is easy to prepare it 
 from dolphins_recognition_challenge.datasets import get_dataset
 
 train_ds, val_ds = get_dataset("segmentation")
-
-type(train_ds)
 ```
-
-
-
-
-    torch.utils.data.dataloader.DataLoader
-
-
 
 The easiest way is to start is by downloading the same [tutorial](https://github.com/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb) Jupyter notebook mentioned above.
 
@@ -67,30 +53,40 @@ The easiest way is to start is by downloading the same [tutorial](https://github
 
 ## Organizers
 
+##### 
 
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/cisex_logo.png" alt="CISEx" width="150" style="max-width: 150px">
 
-[CISEx](https://www.cisex.org/) is an association of independent software exporters that gathers over 280 members, mostly companies from IT sector oriented towards global market. Our main goal is to strengthen the position of IT sector in Croatia by supporting software production, export and entrepreneurship, creating new jobs and positioning our members on the global market. It serves as a platform for growth and development of all our members, joint appearance on the domestic and foreign markets, exchange of experiences and mutual cooperation
+[CISEx](https://www.cisex.org/) is an association of independent software exporters that gathers over 280 members, mostly companies from IT sector oriented towards global market. Our main goal is to strengthen the position of IT sector in Croatia by supporting software production, export and entrepreneurship, creating new jobs and positioning our members on the global market. It serves as a platform for growth and development of all our members, joint appearance on the domestic and foreign markets, exchange of experiences and mutual cooperation.  
+
+##### 
 
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/bwi_logoen.png" alt="Blue World Institute" width="150" style="max-width: 150px">
 
-[The Blue World Institute of Marine Research and Conservation](https://www.blue-world.org/) works to protect the marine environment in the Adriatic Sea. To that purpose, the Blue World Institute operates three programmes – research, education, and conservation. Our research focuses mainly on large marine vertebrates (dolphins and whales, sea turtles, sharks and giant devil rays) informing our education activities and conservation projects. We work from the Adriatic islands of Lošinj, Murter and Vis, with the local communities, and collaborate nationally, regionally and internationally to advance sustainable marine management and environmental sustainability in the Mediterranean Basin.
+[The Blue World Institute of Marine Research and Conservation](https://www.blue-world.org/) works to protect the marine environment in the Adriatic Sea. To that purpose, the Blue World Institute operates three programmes – research, education, and conservation. Our research focuses mainly on large marine vertebrates (dolphins and whales, sea turtles, sharks and giant devil rays) informing our education activities and conservation projects. We work from the Adriatic islands of Lošinj, Murter and Vis, with the local communities, and collaborate nationally, regionally and internationally to advance sustainable marine management and environmental sustainability in the Mediterranean Basin.  
+
+##### 
 
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/CroAI-logo.jpg" alt="CroAI" width="150" style="max-width: 150px">
 
-[CroAI](https://www.croai.org/), the Croatian Artificial Intelligence Association, was founded in 2019 and brings together leading companies and startups in the field of AI in Croatia. CroAI seeks to position Croatia as a country of unique opportunities for the development of human-centric AI through a culture of dialogue between entrepreneurs and decision makers at the national and European level.
+[CroAI](https://www.croai.org/), the Croatian Artificial Intelligence Association, was founded in 2019 and brings together leading companies and startups in the field of AI in Croatia. CroAI seeks to position Croatia as a country of unique opportunities for the development of human-centric AI through a culture of dialogue between entrepreneurs and decision makers at the national and European level.  
 
 
 ## Sponsors
-      
+
+##### 
+
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/01_Infobip_logo_horizontal_rgb_color.png?v=2" alt="Infobip" width="150" style="max-width: 150px">
   
-[Infobip](https://www.infobip.com/) is a global cloud communications platform that enables businesses to build connected experiences across all stages of the customer journey. Accessed through a single platform, Infobip’s omnichannel engagement, identity, security and contact center solutions help clients and partners overcome the complexity of consumer communications, grow their business and increase loyalty. With over a decade of industry experience, Infobip has expanded to include 65+ offices on six continents offering natively built technology with the capacity to reach over seven billion mobile devices and ‘things’ in 190+ countries connected directly to over 650 telecom networks.
-
+[Infobip](https://www.infobip.com/) is a global cloud communications platform that enables businesses to build connected experiences across all stages of the customer journey. Accessed through a single platform, Infobip’s omnichannel engagement, identity, security and contact center solutions help clients and partners overcome the complexity of consumer communications, grow their business and increase loyalty. With over a decade of industry experience, Infobip has expanded to include 65+ offices on six continents offering natively built technology with the capacity to reach over seven billion mobile devices and ‘things’ in 190+ countries connected directly to over 650 telecom networks.  
+  
+##### 
 
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/Photomath-logo-RGB.png?v=2" alt="Photomath" width="200" style="max-width: 200px">
 
-[Photomath](https://photomath.app/) is a fast-growing EdTech company whose mobile app is the #1 app in the world to learn math. Powered by advanced machine learning technology, app instantly scans, accurately solves, and intuitively explains printed and handwritten math problems to users through step-by-step explanations. With over 220 million downloads globally and tens of millions of users worldwide every month, Photomath is the most popular mobile application from Croatia and one of the most popular educational apps of all times. The Photomath team in Zagreb has grown to over 100 employees and more than 100 students working on content creation, and they also have a team of a dozen people in Silicon Valley, USA. Photomath’s mission is to democratize education through the use of artificial intelligence and software-generated educational content. For their ambitious plans, they bring together top experts who have the opportunity to work on a global product and gain unique technological knowledge and experience. In 2021, they plan further investments and employment, especially in the segment of software development and artificial intelligence.
+[Photomath](https://photomath.app/) is a fast-growing EdTech company whose mobile app is the #1 app in the world to learn math. Powered by advanced machine learning technology, app instantly scans, accurately solves, and intuitively explains printed and handwritten math problems to users through step-by-step explanations. With over 220 million downloads globally and tens of millions of users worldwide every month, Photomath is the most popular mobile application from Croatia and one of the most popular educational apps of all times. The Photomath team in Zagreb has grown to over 100 employees and more than 100 students working on content creation, and they also have a team of a dozen people in Silicon Valley, USA. Photomath’s mission is to democratize education through the use of artificial intelligence and software-generated educational content. For their ambitious plans, they bring together top experts who have the opportunity to work on a global product and gain unique technological knowledge and experience. In 2021, they plan further investments and employment, especially in the segment of software development and artificial intelligence.  
+  
+##### 
 
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/PDC-logo-horizontal-transparent.png?v=2" alt="Porsche Digital Croatia" width="250" style="max-width: 250px">
 
