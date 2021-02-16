@@ -54,18 +54,18 @@ type(train_ds)
 ## Organizer
 
 
-<img src="notebooks/images/cisex_logo.png" alt="Cisex" width="150" style="max-width: 150px">
+<img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/cisex_logo.png" alt="Cisex" width="150" style="max-width: 150px">
 
 CISEx is an association of independent software exporters that gathers over 280 members, mostly companies from IT sector oriented towards global market. Our main goal is to strengthen the position of IT sector in Croatia by supporting software production, export and entrepreneurship, creating new jobs and positioning our members on the global market. It serves as a platform for growth and development of all our members, joint appearance on the domestic and foreign markets, exchange of experiences and mutual cooperation
 
 
 ## Sponsors
       
-<img src="notebooks/images/01_Infobip_logo_horizontal_rgb_color.png" alt="Infobip" width="150" style="max-width: 150px">
+<img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/01_Infobip_logo_horizontal_rgb_color.png" alt="Infobip" width="150" style="max-width: 150px">
   
 [Infobip](https://www.infobip.com/) is a global cloud communications platform that enables businesses to build connected customer experiences across all stages of the customer journey at scale, with easy and contextualized interactions over customers’ preferred channels. Accessed through a single platform, Infobip’s omnichannel engagement, identity, user authentication security and contact center solutions help clients and partners overcome the complexity of consumer communications, grow their business and increase loyalty– all in a fast, secure and reliable way. With over a decade of industry experience, Infobip has expanded to include 68+ offices on six continents offering natively built technology with the capacity to reach over seven billion mobile devices and ‘things’ in 190+ countries connected directly to over 600 telecom networks. The company serves and partners with leading mobile operators, messaging apps, banks, social networks, tech companies, and aggregators.
 
-<img src="notebooks/images/Photomath-logo-RGB.png" alt="Photomath" width="225" style="max-width: 225px">
+<img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/Photomath-logo-RGB.png" alt="Photomath" width="225" style="max-width: 225px">
 
 [Photomath](https://photomath.app/) is a fast-growing EdTech company whose mobile app is the #1 app in the world to learn math. Powered by advanced machine learning technology, the app instantly scans, accurately solves, and intuitively explains printed and handwritten math problems to users through step-by-step explanations.
  
@@ -76,7 +76,7 @@ As math is an increasingly crucial skill, particularly as problem-solving and qu
 Since 2016, the company has grown from 30 to almost 200 people and plans to further grow rapidly, especially expanding its engineering teams with experienced experts in web development, mobile app development and machine learning.
 
 
-<img src="notebooks/images/PDC-logo-horizontal-transparent.png" alt="Porsche Digital Croatia" width="250" style="max-width: 250px">
+<img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/PDC-logo-horizontal-transparent.png" alt="Porsche Digital Croatia" width="250" style="max-width: 250px">
 
 [Porsche Digital Croatia](https://infinum.com/ventures/porsche-digital-croatia/) is a joint venture formed by [Infinum](https://infinum.com/), the leading software design and development company in Croatia, and Porsche Digital, a subsidiary of the German sports car manufacturer. The goal of this company is to be the hub of digital innovation and high-tech solutions in the automotive sector, and the main mission is to find and develop new digital business models and optimize existing products. Their teams of talented professionals are focused on technological innovation and are passionate about software development and design, machine learning and artificial intelligence.
 

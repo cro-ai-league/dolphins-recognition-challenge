@@ -83,7 +83,7 @@ modules = ["datasets.py",
            "convert_raw_jpg.py",
            "image_resize.py"]
 
-doc_url = "https://cro-ai-league.github.io/dolphins-recognition-challenge/"
+doc_url = "https://cro-ai-league.cisex.org/dolphins-recognition-challenge/"
 
 git_url = "https://github.com/cro-ai-league/dolphins-recognition-challenge/tree/master/"
 
