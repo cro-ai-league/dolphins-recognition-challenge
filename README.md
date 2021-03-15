@@ -20,7 +20,32 @@ The challenge has two parts:
 
 ## Tutorial
 
-The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb)
+The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google.
+
+<html>
+  <head>
+    <title>Center an Image using text align center</title>
+    <style>
+      .img-container {
+        text-align: center;
+       }
+      .img-border{
+        border-style: outset;
+        border-width: 7px;
+        border-color: red;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="img-container"> <!-- Block parent element -->
+      <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb">
+          <img class="img-border" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+      </a>
+    </div>
+  </body>
+</html>
+
+
 
 ## Leaderboard
 
