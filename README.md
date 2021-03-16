@@ -23,6 +23,8 @@ The challenge has two parts:
 The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google.
 
 
+{% include note.html content='Click the button below to open a tutorial on Google Colaboratory. Clicking the button will open a Google Collaborative website with a tutorial containing detailed instructions and tips on how to train the model. By following the tutorial cell by cell, you will make your first model and participate in the challenge.' %}
+
 <html>
 <head>
 <style>
