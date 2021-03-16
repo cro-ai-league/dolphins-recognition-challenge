@@ -22,29 +22,64 @@ The challenge has two parts:
 
 The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google.
 
-<html>
-  <head>
-    <title>Center an Image using text align center</title>
-    <style>
-      .img-container {
-        text-align: center;
-       }
-      .img-border{
-        border-style: outset;
-        border-width: 7px;
-        border-color: red;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="img-container"> <!-- Block parent element -->
-      <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb">
-          <img class="img-border" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-      </a>
-    </div>
-  </body>
-</html>
 
+<html>
+<head>
+<style>
+.button {
+    display: inline-block;
+    border-radius: 15px;
+    background-color: #29abe1;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 5px #999;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.img-container {
+    text-align: center;
+}    
+
+</style>
+</head>
+<body>
+<div class=img-container>    
+<a href="https://colab.research.google.com/github/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb">
+    <button class="button" style="vertical-align:middle"><span>Open in Colab </span></button>
+</a>
+</div>
+</body>
+</html>
 
 
 ## Leaderboard
