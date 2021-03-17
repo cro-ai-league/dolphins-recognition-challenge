@@ -4,25 +4,6 @@
 
 !["Croatian AI League"](https://raw.githubusercontent.com/cro-ai-league/dolphins-recognition-challenge/master/docs/images/AILeague_logo-800x452.png)
 
-## Intro
-
-The challenge has two parts:
-- instance segmentation of dolphins in the photo (February 18th - April 12th 2021), and
-- recognition of an individual dolphin from the photo (April 13th - June 15th 2021). 
-
-## Legal
-
-- Official rules (in Croatian) can be found at the following  [link](https://cro-ai-league.cisex.org/Rules.html).
-
-- Privacy notice (in Croatian) can be found at the following  [link](https://cro-ai-league.cisex.org/Privacy_notice.html).
-
-
-
-## Tutorial
-
-The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google.
-
-
 {% include note.html content='Click the button below to open a tutorial on Google Colaboratory. Clicking the button will open a Google Collaborative website with a tutorial containing detailed instructions and tips on how to train the model. By following the tutorial cell by cell, you will make your first model and participate in the challenge.' %}
 
 <html>
@@ -82,6 +63,25 @@ The easiest way to start and submit your solution is to open the following tutor
 </div>
 </body>
 </html>
+
+
+## Intro
+
+The challenge has two parts:
+- instance segmentation of dolphins in the photo (February 18th - April 12th 2021), and
+- recognition of an individual dolphin from the photo (April 13th - June 15th 2021). 
+
+## Legal
+
+- Official rules (in Croatian) can be found at the following  [link](https://cro-ai-league.cisex.org/Rules.html).
+
+- Privacy notice (in Croatian) can be found at the following  [link](https://cro-ai-league.cisex.org/Privacy_notice.html).
+
+
+
+## Tutorial
+
+The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google.
 
 
 ## Leaderboard
