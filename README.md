@@ -9,7 +9,7 @@
 The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google.
 {% include note.html content='Click the button below to open a tutorial on Google Colaboratory. Clicking the button will open a Google Collaborative website with a tutorial containing detailed instructions and tips on how to train the model. By following the tutorial cell by cell, you will make your first model and participate in the challenge.' %}
 
-[!["Open In Colab"](https://raw.githubusercontent.com/cro-ai-league/dolphins-recognition-challenge/fix_html/notebooks/images/png_button.png)](https://colab.research.google.com/github/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb)
+[!["Open In Colab"](https://raw.githubusercontent.com/cro-ai-league/dolphins-recognition-challenge/add_image_button/notebooks/images/open_in_colab_button.svg)](https://colab.research.google.com/github/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb)
 
 ## Intro
 
