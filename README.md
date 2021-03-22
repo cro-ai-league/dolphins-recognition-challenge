@@ -71,8 +71,8 @@ The easiest way to start and submit your solution is to open the following tutor
 ## Intro
 
 The challenge has two parts:
-- instance segmentation of dolphins in the photo (February 18th - April 12th 2021), and
-- recognition of an individual dolphin from the photo (April 13th - June 15th 2021). 
+- instance segmentation of dolphins in the photo (February 18th - June 4th 2021), and
+- recognition of an individual dolphin from the photo (June 5th - September 3th 2021). 
 
 ## Legal
 
