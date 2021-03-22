@@ -91,70 +91,12 @@ The easiest way to start and submit your solution is to open the following tutor
 The leaderboard will be periodically updated to reflect new sumbissions.
 {% include note.html content='The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.' %}
 
-```python
-leaderboard
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>alias</th>
-      <th>date</th>
-      <th>submitted_iou</th>
-      <th>calculated_iou</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>stokic</td>
-      <td>2021-02-21 18:51:53.232539</td>
-      <td>0.43552</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>firstML</td>
-      <td>2021-02-28 09:55:59.155951</td>
-      <td>0.42529</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>rangoiv_0.0</td>
-      <td>2021-03-11 21:18:19.755089</td>
-      <td>0.41769</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>testy</td>
-      <td>2021-03-12 15:06:14.210987</td>
-      <td>0.39001</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+        alias        date                          submitted_iou    calculated_iou
+    --  -----------  --------------------------  ---------------  ----------------
+     1  stokic       2021-02-21 18:51:53.232539          0.43552               nan
+     2  firstML      2021-02-28 09:55:59.155951          0.42529               nan
+     3  rangoiv_0.0  2021-03-11 21:18:19.755089          0.41769               nan
+     4  testy        2021-03-12 15:06:14.210987          0.39001               nan
 
 
 ## Local install
