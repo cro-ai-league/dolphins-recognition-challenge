@@ -21,7 +21,7 @@ docs: $(SRC)
 	nbdev_build_docs
 	cd docs; bundle install --path /tmp/vendor/bundle; cd ..
 	touch docs
-	fix_readme README.md
+#	fix_readme README.md
 
 #	cd docs; bundle install; cd ..
 
