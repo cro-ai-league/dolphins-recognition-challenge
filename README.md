@@ -71,8 +71,8 @@ The easiest way to start and submit your solution is to open the following tutor
 ## Intro
 
 The challenge has two parts:
-- instance segmentation of dolphins in the photo (February 18th - April 12th 2021), and
-- recognition of an individual dolphin from the photo (April 13th - June 15th 2021). 
+- instance segmentation of dolphins in the photo (February 18th - June 4th 2021), and
+- recognition of an individual dolphin from the photo (June 5th - September 3th 2021). 
 
 ## Legal
 
@@ -89,20 +89,12 @@ The challenge has two parts:
 The leaderboard will be periodically updated to reflect new sumbissions.
 {% include note.html content='The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.' %}
 
-
-    ---------------------------------------------------------------------------
-
-    ModuleNotFoundError                       Traceback (most recent call last)
-
-    <ipython-input-1-2d399a259151> in <module>
-          1 #hide_input
-          2 
-    ----> 3 from dolphins_recognition_challenge.leaderboard import get_leaderboard
-          4 from tabulate import tabulate
-          5 
-
-
-    ModuleNotFoundError: No module named 'dolphins_recognition_challenge'
+        alias        date                          submitted_iou    calculated_iou
+    --  -----------  --------------------------  ---------------  ----------------
+     1  stokic       2021-02-21 18:51:53.232539          0.43552               nan
+     2  firstML      2021-02-28 09:55:59.155951          0.42529               nan
+     3  rangoiv_0.0  2021-03-11 21:18:19.755089          0.41769               nan
+     4  testy        2021-03-12 15:06:14.210987          0.39001               nan
 
 
 ## Local install
