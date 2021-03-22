@@ -38,6 +38,76 @@ nb_path: "notebooks/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tutorial">Tutorial<a class="anchor-link" href="#Tutorial"> </a></h2><p>The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google.
+{% include note.html content='Click the button below to open a tutorial on Google Colaboratory. Clicking the button will open a Google Collaborative website with a tutorial containing detailed instructions and tips on how to train the model. By following the tutorial cell by cell, you will make your first model and participate in the challenge.' %}</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<html>
+<head>
+<style>
+.button {
+    display: inline-block;
+    border-radius: 15px;
+    background-color: #29abe1;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 5px #999;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.img-container {
+    text-align: center;
+}    
+
+</style>
+</head>
+<body>
+<div class=img-container>    
+<a href="https://colab.research.google.com/github/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb">
+    <button class="button" style="vertical-align:middle"><span>Open in Colab </span></button>
+</a>
+</div>
+</body>
+</html>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Intro">Intro<a class="anchor-link" href="#Intro"> </a></h2><p>The challenge has two parts:</p>
 <ul>
 <li>instance segmentation of dolphins in the photo (February 18th - April 12th 2021), and</li>
@@ -61,13 +131,6 @@ nb_path: "notebooks/index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tutorial">Tutorial<a class="anchor-link" href="#Tutorial"> </a></h2><p>The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google: <a href="https://colab.research.google.com/github/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Leaderboard">Leaderboard<a class="anchor-link" href="#Leaderboard"> </a></h2><p><img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/medal-2.jpeg" alt="medal"></p>
 <p>The leaderboard will be periodically updated to reflect new sumbissions.
 {% include note.html content='The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.' %}</p>
@@ -75,6 +138,32 @@ nb_path: "notebooks/index.ipynb"
 </div>
 </div>
 </div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>    alias        date                          submitted_iou    calculated_iou
+--  -----------  --------------------------  ---------------  ----------------
+ 1  stokic       2021-02-21 18:51:53.232539          0.43552               nan
+ 2  firstML      2021-02-28 09:55:59.155951          0.42529               nan
+ 3  rangoiv_0.0  2021-03-11 21:18:19.755089          0.41769               nan
+ 4  testy        2021-03-12 15:06:14.210987          0.39001               nan
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Local-install">Local install<a class="anchor-link" href="#Local-install"> </a></h2><p>You can also work on your own personal computer or cloud by installing our <a href="https://pypi.org/project/dolphins-recognition-challenge/">pip package</a> and downloading the data directly using the following command:</p>
