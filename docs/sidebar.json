@@ -1,15 +1,23 @@
 {
-  "dolphins_recognition_challenge": {
-    "Overview": "/",
-    "Rules": "Rules.html",
-    "Privacy notice": "Privacy_notice.html",
-    "Datasets": "Datasets.html",
-    "Model": "Model.html",
-    "Submission": "Submissions.html",
-    "Leaderboard": "Leaderboard.html",
-    "Utilities": "Utils.html",
-    "Helpers": "Helpers.html",
-    "Convert": "Convert_raw_image_to_jpg.html",
-    "Image resize": "Image_resize.html"
-  }
+    "Dolphins recognition challenge":{
+        "Overview":"/",
+        "":{
+            "Legal":{
+                "Rules":"Rules.html",
+                "Privacy notice":"Privacy_notice.html"
+            }
+        },
+        "empty1":{
+            "API":{
+                "Datasets":"Datasets.html",
+                "Model":"Model.html",
+                "Submission":"Submissions.html",
+                "Leaderboard":"Leaderboard.html",
+                "Utilities":"Utils.html",
+                "Helpers":"Helpers.html",
+                "Convert":"Convert_raw_image_to_jpg.html",
+                "Image resize":"Image_resize.html"
+            }
+        }
+    }
 }
