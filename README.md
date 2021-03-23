@@ -7,66 +7,9 @@
 ## Tutorial
 
 The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google.
-{% include note.html content='Click the button below to open a tutorial on Google Colaboratory. Clicking the button will open a Google Collaborative website with a tutorial containing detailed instructions and tips on how to train the model. By following the tutorial cell by cell, you will make your first model and participate in the challenge.' %}
+Click the button below to open a tutorial on Google Colaboratory. Clicking the button will open a Google Collaborative website with a tutorial containing detailed instructions and tips on how to train the model. By following the tutorial cell by cell, you will make your first model and participate in the challenge.
 
-<html>
-<head>
-<style>
-.button {
-    display: inline-block;
-    border-radius: 15px;
-    background-color: #29abe1;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 20px;
-    padding: 10px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-    box-shadow: 0 5px #999;
-}
-
-.button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-.button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-.button:hover span {
-    padding-right: 25px;
-}
-
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-.img-container {
-    text-align: center;
-}    
-
-</style>
-</head>
-<body>
-<div class=img-container>    
-<a href="https://colab.research.google.com/github/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb">
-    <button class="button" style="vertical-align:middle"><span>Open in Colab </span></button>
-</a>
-</div>
-</body>
-</html>
-
+[!["Open In Colab"](https://raw.githubusercontent.com/cro-ai-league/dolphins-recognition-challenge/add_image_button/notebooks/images/open_in_colab_button.svg)](https://colab.research.google.com/github/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb)
 
 ## Intro
 
@@ -87,7 +30,7 @@ The challenge has two parts:
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/medal-2.jpeg" alt="medal">
 
 The leaderboard will be periodically updated to reflect new sumbissions.
-{% include note.html content='The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.' %}
+The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.
 
         alias        date                          submitted_iou    calculated_iou
     --  -----------  --------------------------  ---------------  ----------------
