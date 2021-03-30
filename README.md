@@ -32,12 +32,15 @@ The challenge has two parts:
 The leaderboard will be periodically updated to reflect new sumbissions.
 The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.
 
-        alias        date                          submitted_iou    calculated_iou
-    --  -----------  --------------------------  ---------------  ----------------
-     1  stokic       2021-02-21 18:51:53.232539          0.43552               nan
-     2  firstML      2021-02-28 09:55:59.155951          0.42529               nan
-     3  rangoiv_0.0  2021-03-11 21:18:19.755089          0.41769               nan
-     4  testy        2021-03-12 15:06:14.210987          0.39001               nan
+        alias            date                          submitted_iou    calculated_iou
+    --  ---------------  --------------------------  ---------------  ----------------
+     1  tekashi          2021-03-27 12:07:10.438811          0.48554               nan
+     2  dolphinSantiago  2021-03-28 21:13:52.740719          0.48156               nan
+     3  dupincek         2021-03-29 17:04:06.266327          0.44912               nan
+     4  stokic           2021-02-21 18:51:53.232539          0.43552               nan
+     5  firstML          2021-02-28 09:55:59.155951          0.42529               nan
+     6  rangoiv_0.0      2021-03-11 21:18:19.755089          0.41769               nan
+     7  testy            2021-03-12 15:06:14.210987          0.39001               nan
 
 
 ## Local install
