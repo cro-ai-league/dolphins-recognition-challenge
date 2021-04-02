@@ -141,7 +141,20 @@ def save_public_leaderboard(private_leaderboard_path=private_leaderboard_path, p
 
 def get_leaderboard(public_leaderboard_path=public_leaderboard_path):
     public_leaderboard = pd.read_csv(public_leaderboard_path)
-    public_leaderboard = public_leaderboard[(public_leaderboard.alias != "dolphin123") & (public_leaderboard.alias != "malimedo") & (public_leaderboard.alias != "prvi_pokušaj")]
-    public_leaderboard = public_leaderboard.sort_values(by=["submitted_iou"], ascending=False).reset_index(drop=True)
+    public_leaderboard = public_leaderboard[
+        (public_leaderboard.alias != "dolphin123")
+        & (public_leaderboard.alias != "malimedo")
+        & (public_leaderboard.alias != "prvi_pokušaj")
+    ]
+    public_leaderboard = public_leaderboard.sort_values(
+        by=["submitted_iou"], ascending=False
+    ).reset_index(drop=True)
+
+    public_leaderboard["alias_groupby"] = public_leaderboard["alias"]
+    public_leaderboard = (
+        public_leaderboard.groupby(["alias_groupby"], sort=False)
+        .max()
+        .reset_index(drop=True)
+    )
     public_leaderboard.index = public_leaderboard.index + 1
     return public_leaderboard
