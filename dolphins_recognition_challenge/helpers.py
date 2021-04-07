@@ -51,7 +51,6 @@ def fix_readme(
             list_of_lines[i] = r1.group(1) + "\n"
             if verbose:
                 print(list_of_lines[i])
-        print(r1)
 
     file = open(file_path, "w")
     file.writelines(list_of_lines)
