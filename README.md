@@ -34,7 +34,7 @@ The leaderboard is generated using validation set and will most likely be differ
 
         alias            date                          submitted_iou    calculated_iou
     --  ---------------  --------------------------  ---------------  ----------------
-     1  tekashi          2021-04-08 23:43:25.680146          0.50625               nan
+     1  tekashi          2021-04-19 15:03:11.966772          0.51546               nan
      2  dolphinSantiago  2021-03-28 21:13:52.740719          0.48156               nan
      3  Orka             2021-04-02 16:21:59.548029          0.47683               nan
      4  Dupin            2021-03-31 14:35:22.171495          0.46228               nan
@@ -56,7 +56,7 @@ You can also work on your own personal computer or cloud by installing our [pip 
 
 The dataset is prepared for use with PyTorch, although it is easy to prepare it for other frameworks. To use it with PyTorch, install the PIP package above and import it as follows:
 
-```
+```python
 from dolphins_recognition_challenge.datasets import get_dataset
 
 train_ds, val_ds = get_dataset("segmentation")
