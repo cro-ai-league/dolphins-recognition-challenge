@@ -34,7 +34,7 @@ The leaderboard is generated using validation set and will most likely be differ
 
         alias            date                          submitted_iou    calculated_iou
     --  ---------------  --------------------------  ---------------  ----------------
-     1  tekashi          2021-04-08 23:43:25.680146          0.50625               nan
+     1  tekashi          2021-04-19 15:03:11.966772          0.51546               nan
      2  dolphinSantiago  2021-03-28 21:13:52.740719          0.48156               nan
      3  Orka             2021-04-02 16:21:59.548029          0.47683               nan
      4  Dupin            2021-03-31 14:35:22.171495          0.46228               nan
