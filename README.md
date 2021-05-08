@@ -7,7 +7,7 @@
 ## Tutorial
 
 The easiest way to start and submit your solution is to open the following tutorial on Colaboratory from Google.
-Click the button below to open a tutorial on Google Colaboratory. Clicking the button will open a Google Collaborative website with a tutorial containing detailed instructions and tips on how to train the model. By following the tutorial cell by cell, you will make your first model and participate in the challenge.
+{% include note.html content='Click the button below to open a tutorial on Google Colaboratory. Clicking the button will open a Google Collaborative website with a tutorial containing detailed instructions and tips on how to train the model. By following the tutorial cell by cell, you will make your first model and participate in the challenge.' %}
 
 [!["Open In Colab"](https://raw.githubusercontent.com/cro-ai-league/dolphins-recognition-challenge/master/notebooks/images/open_in_colab_button.svg)](https://colab.research.google.com/github/cro-ai-league/dolphins-recognition-challenge/blob/master/notebooks/00_tutorial/DolphinsTutorial.ipynb)
 
@@ -30,7 +30,7 @@ The challenge has two parts:
 <img src="https://github.com/cro-ai-league/dolphins-recognition-challenge/raw/master/docs/images/medal-2.jpeg" alt="medal">
 
 The leaderboard will be periodically updated to reflect new sumbissions.
-The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.
+{% include note.html content='The leaderboard is generated using validation set and will most likely be different when evaluated at the end of the contest using test dataset due to overfitting.' %}
 
         alias            date                          submitted_iou    calculated_iou
     --  ---------------  --------------------------  ---------------  ----------------
@@ -58,7 +58,7 @@ You can also work on your own personal computer or cloud by installing our [pip 
 
 The dataset is prepared for use with PyTorch, although it is easy to prepare it for other frameworks. To use it with PyTorch, install the PIP package above and import it as follows:
 
-```python
+```
 from dolphins_recognition_challenge.datasets import get_dataset
 
 train_ds, val_ds = get_dataset("segmentation")
