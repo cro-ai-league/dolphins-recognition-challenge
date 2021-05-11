@@ -9,7 +9,7 @@ dolphins_recognition_challenge: $(SRC)
 	touch dolphins_recognition_challenge
 
 local_install: $(SRC) settings.ini
-	pip install -e .
+	pip install --user -e .
     
 sync:
 	nbdev_update_lib
