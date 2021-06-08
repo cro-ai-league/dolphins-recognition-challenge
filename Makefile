@@ -8,24 +8,24 @@ dolphins_recognition_challenge: $(SRC)
 	nbdev_build_lib
 	touch dolphins_recognition_challenge
 
-local_install: $(SRC) settings.ini
+local_install: dolphins_recognition_challenge settings.ini
 	pip install --user -e .
     
-sync:
-	nbdev_update_lib
+#sync:
+#	nbdev_update_lib
 
 docs_serve: docs
 	cd docs && bundle exec jekyll serve --host=0.0.0.0
 
-docs: $(SRC)
+docs: local_install
 	nbdev_build_docs
 	cd docs; bundle install --path /tmp/vendor/bundle; cd ..
-	touch docs
 	fix_readme README.md
+	touch docs
 
 #	cd docs; bundle install; cd ..
 
-test:
+test: local_install
 	nbdev_test_nbs --timing True --pause 2 --n_workers 1
 
 release: pypi
@@ -35,7 +35,7 @@ release: pypi
 pypi: dist
 	twine upload --repository pypi dist/*
 
-dist: clean
+dist: clean local_install
 	python setup.py sdist bdist_wheel
 
 clean:
