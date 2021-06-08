@@ -247,4 +247,5 @@ def resize_dataset(
             dst_images_path,
             dst_class_path,
             dst_instance_path,
+            dst_image_size
         )
