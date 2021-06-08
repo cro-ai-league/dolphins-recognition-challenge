@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np
 import boto3
 from pathlib import Path
+import datetime
 
 # Internal Cell
 
@@ -16,7 +17,7 @@ import shutil
 import torch
 import tempfile
 
-from .datasets import get_dataset
+from .datasets import get_dataset, get_test_dataset
 from .instance_segmentation.model import *
 
 # Internal Cell
@@ -99,7 +100,8 @@ def merge_with_private_leaderboard(
 
 # Internal Cell
 
-def evaluate_model(model_path) -> float:
+
+def evaluate_model(model_path, mode: str = "test") -> float:
     # do it
     with tempfile.TemporaryDirectory() as d:
         with zipfile.ZipFile(model_path, "r") as zip_ref:
@@ -107,15 +109,23 @@ def evaluate_model(model_path) -> float:
             unzipped_path = [x for x in Path(d).glob("submiss*")][0]
 
         model = torch.load(unzipped_path / "model.pt")
-        data_loader, data_loader_test = get_dataset("segmentation", batch_size=4)
-        iou, iou_df = iou_metric(model, data_loader_test.dataset)
+        if mode.lower() == "val":
+            _, data_loader = get_dataset("segmentation", batch_size=4)
+        elif mode.lower() == "test":
+            data_loader = get_test_dataset("segmentation", batch_size=4)
+        else:
+            raise ValueError()
+        iou, iou_df = iou_metric(model, data_loader.dataset)
 
     return iou
 
 # Internal Cell
 
+cut_off_date = datetime.datetime(2021, 6, 5, 0, 0)
+
 def evaluate_private_leaderboard(private_leaderboard_path=private_leaderboard_path):
-    private_leaderboard = pd.read_csv(private_leaderboard_path)
+    private_leaderboard = pd.read_csv(private_leaderboard_path,parse_dates=["date"])
+    private_leaderboard = private_leaderboard[private_leaderboard["date"] < cut_off_date]
     new_entries = private_leaderboard.loc[private_leaderboard["calculated_iou"].isna()]
 
     n = new_entries.shape[0]
@@ -123,7 +133,7 @@ def evaluate_private_leaderboard(private_leaderboard_path=private_leaderboard_pa
         row = new_entries.loc[ix]
         file_name, alias, dt = row["file_name"], row["alias"], row["date"]
         print(f"Evaluating model {i+1}/{n} for {alias} submitted at {dt}...")
-        calculated_iou = evaluate_model(f"models_for_evaluation/{file_name}")
+        calculated_iou = evaluate_model(f"models_for_evaluation/{file_name}", mode="test")
         private_leaderboard.loc[ix, "calculated_iou"] = calculated_iou
 
     private_leaderboard.to_csv(private_leaderboard_path, index=False)
@@ -147,12 +157,12 @@ def get_leaderboard(public_leaderboard_path=public_leaderboard_path):
         & (public_leaderboard.alias != "prvi_pokušaj")
     ]
     public_leaderboard = public_leaderboard.sort_values(
-        by=["submitted_iou"], ascending=False
+        by=["calculated_iou"], ascending=False
     ).reset_index(drop=True)
     public_leaderboard.drop_duplicates(subset="alias", keep="first", inplace=True)
 
     public_leaderboard = public_leaderboard.sort_values(
-        by=["submitted_iou"], ascending=False
+        by=["calculated_iou"], ascending=False
     ).reset_index(drop=True)
     public_leaderboard.index = public_leaderboard.index + 1
     return public_leaderboard
